@@ -34,6 +34,7 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="CSM INI Static Variable Support.vipb" Type="Document" URL="../CSM INI Static Variable Support.vipb"/>
+		<Item Name="csm-app.ini" Type="Document" URL="../csm-app.ini"/>
 		<Item Name="README.md" Type="Document" URL="../README.md"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
