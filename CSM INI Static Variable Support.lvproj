@@ -21,6 +21,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name=".github" Type="Folder" URL="../.github">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="Example" Type="Folder" URL="../Example">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
@@ -31,6 +34,7 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="CSM INI Static Variable Support.vipb" Type="Document" URL="../CSM INI Static Variable Support.vipb"/>
+		<Item Name="README.md" Type="Document" URL="../README.md"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="user.lib" Type="Folder">
 				<Item Name="Communicable State Machine.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/Communicable State Machine.lvlib"/>
