@@ -4,9 +4,15 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">385908736</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Property Name="NI.SortType" Type="Int">3</Property>
 	<Item Name="_Support" Type="Folder">
 		<Item Name="Default Ini Config File.vi" Type="VI" URL="../_Support/Default Ini Config File.vi"/>
+		<Item Name="global-csm-ini-db-change-flag.vi" Type="VI" URL="../_Support/global-csm-ini-db-change-flag.vi"/>
 		<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
+		<Item Name="INI-FGV2.vi" Type="VI" URL="../_Support/INI-FGV2.vi"/>
+		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../CSM - Read INI String.vi"/>
+		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../CSM - Write INI String.vi"/>
 	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
+	<Item Name="CSM - Sync with File.vi" Type="VI" URL="../CSM - Sync with File.vi"/>
 </Library>
