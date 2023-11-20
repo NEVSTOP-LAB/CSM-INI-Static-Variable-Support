@@ -10,9 +10,14 @@
 		<Item Name="global-csm-ini-db-change-flag.vi" Type="VI" URL="../_Support/global-csm-ini-db-change-flag.vi"/>
 		<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
 		<Item Name="INI-FGV2.vi" Type="VI" URL="../_Support/INI-FGV2.vi"/>
-		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../CSM - Read INI String.vi"/>
-		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../CSM - Write INI String.vi"/>
+		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
+		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
+		<Item Name="CSM - Read Config Cluster(Variant).vi" Type="VI" URL="../_Support/CSM - Read Config Cluster(Variant).vi"/>
+		<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
+		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
+	<Item Name="CSM - Read Config Cluster.vim" Type="VI" URL="../CSM - Read Config Cluster.vim"/>
+	<Item Name="CSM - Write Config Cluster.vim" Type="VI" URL="../CSM - Write Config Cluster.vim"/>
 	<Item Name="CSM - Sync with File.vi" Type="VI" URL="../CSM - Sync with File.vi"/>
 </Library>
