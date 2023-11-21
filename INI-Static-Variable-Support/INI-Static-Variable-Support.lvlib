@@ -17,7 +17,7 @@
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
-	<Item Name="CSM - Read Config Cluster.vim" Type="VI" URL="../CSM - Read Config Cluster.vim"/>
-	<Item Name="CSM - Write Config Cluster.vim" Type="VI" URL="../CSM - Write Config Cluster.vim"/>
-	<Item Name="CSM - Sync with File.vi" Type="VI" URL="../CSM - Sync with File.vi"/>
+	<Item Name="CSM - Read Configuration Variable.vim" Type="VI" URL="../CSM - Read Configuration Variable.vim"/>
+	<Item Name="CSM - Write Configuration Variable.vim" Type="VI" URL="../CSM - Write Configuration Variable.vim"/>
+	<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
 </Library>
