@@ -5,4 +5,4 @@ The library is now offering `${variable}` support for CSM, which is loaded from 
 ![image](.github/CSM-INI-Static-Variable-Support.png)
 
 **Open Source Declaration**
- - A copy of <b>LabVIEW-Config</b> by @rcpacini is included and used.  Source Repo link: https://github.com/rcpacini/LabVIEW-Config
+ - A copy of [LabVIEW-Config](https://github.com/rcpacini/LabVIEW-Config) by [@rcpacini](https://github.com/rcpacini) is included and used. 
