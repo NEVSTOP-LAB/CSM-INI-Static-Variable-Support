@@ -12,9 +12,11 @@
 		<Item Name="INI-FGV2.vi" Type="VI" URL="../_Support/INI-FGV2.vi"/>
 		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
 		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
-		<Item Name="CSM - Read Config Cluster(Variant).vi" Type="VI" URL="../_Support/CSM - Read Config Cluster(Variant).vi"/>
+		<Item Name="CSM - Read Sessions.vi" Type="VI" URL="../_Support/CSM - Read Sessions.vi"/>
+		<Item Name="CSM - Read Key Names.vi" Type="VI" URL="../_Support/CSM - Read Key Names.vi"/>
 		<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
+		<Item Name="Supported Type.vi" Type="VI" URL="../_Support/Supported Type.vi"/>
 	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
 	<Item Name="CSM - Read Configuration Variable.vim" Type="VI" URL="../CSM - Read Configuration Variable.vim"/>

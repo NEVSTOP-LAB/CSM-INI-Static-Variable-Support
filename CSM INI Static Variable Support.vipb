@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2023-11-18 22:05:55" Creator="liyao" Comments="" ID="db81a39bb31fc3f1d199f6764fdefd07">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2023-11-22 14:18:27" Creator="liyao" Comments="" ID="a25131614c4d29265acdb936239586cf">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2023.11.0.15</Library_Version>
@@ -19,6 +19,10 @@
     <Package_Dependencies>
       <Additional_External_Dependencies>nevstop_lib_communicable_state_machine &gt;=2023.11.11.215032</Additional_External_Dependencies>
       <Additional_External_Dependencies>nevstop_lib_csm_api_string_arguments_support &gt;=2023.11.13.91436</Additional_External_Dependencies>
+      <Additional_External_Dependencies>oglib_array &gt;=4.0.0.9</Additional_External_Dependencies>
+      <Additional_External_Dependencies>oglib_error &gt;=4.0.0.12</Additional_External_Dependencies>
+      <Additional_External_Dependencies>oglib_lvdata &gt;=4.0.0.7</Additional_External_Dependencies>
+      <Additional_External_Dependencies>oglib_string &gt;=4.0.0.6</Additional_External_Dependencies>
       <Package_Conflicts>nevstop_lib_jki_state_machine++ &gt;=2023.8.5.2239</Package_Conflicts>
     </Package_Dependencies>
     <Custom_Action_VIs>
@@ -32,7 +36,11 @@
     <VI_Package_Configuration_File>CSM INI Static Variable Support.vipc</VI_Package_Configuration_File>
     <Description>
       <One_Line_Description_Summary>Support of Static Variables which are loaded from ini configuration file for Communicable State Machine(CSM)</One_Line_Description_Summary>
-      <Description>This library is adding ${variable} support of arguments for CSM, which is loaded from the first catched ini file in application folder or topmost VI's parent folder. You can specified a section name or use ${section.variable:defaultValue} when section name is left as blank.</Description>
+      <Description>This library is adding ${variable} support of arguments for CSM, which is loaded from the first catched ini file in application folder or topmost VI's parent folder. You can specified a section name or use ${section.variable:defaultValue} when section name is left as blank.
+
+&lt;b&gt;Open Source Declaration&lt;b&gt;
+ - A copy of &lt;b&gt;LabVIEW-Config&lt;/b&gt; by @rcpacini is included and used.  Source Repo link: https://github.com/rcpacini/LabVIEW-Config
+</Description>
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
