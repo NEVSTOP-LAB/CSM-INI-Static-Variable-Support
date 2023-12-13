@@ -18,6 +18,7 @@
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 		<Item Name="Supported Type.vi" Type="VI" URL="../_Support/Supported Type.vi"/>
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
+		<Item Name="_Random Change Flag.vi" Type="VI" URL="../_Support/_Random Change Flag.vi"/>
 	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
 	<Item Name="CSM - Read Configuration Variable.vim" Type="VI" URL="../CSM - Read Configuration Variable.vim"/>
