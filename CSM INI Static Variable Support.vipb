@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2023-12-13 13:48:39" Creator="liyao" Comments="" ID="e090516eaf7782cabb0f55036d8af7e3">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2023-12-13 13:56:53" Creator="liyao" Comments="" ID="2550576123318c88e1083113d6c2f0f6">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2023.12.0.15</Library_Version>
@@ -45,7 +45,8 @@
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
       <Release_Notes>[fix] #12 Use Random Change Flag instead of TickCount Change Flag
-[fix] #11 show default value for CSM - Read INI String.vi</Release_Notes>
+[fix] #11 show default value for CSM - Read INI String.vi
+[fix] #13 Fix behavior of CSM - Read Configuration Variable.vim</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
