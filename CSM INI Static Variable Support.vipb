@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-01-26 12:54:37" Creator="liyao" Comments="" ID="0473905811b61f6afa36e87a8e4847c7">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-01-26 13:06:58" Creator="liyao" Comments="" ID="6e9c080fc8d6164265713a677d523711">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2024.1.0.15</Library_Version>
@@ -46,7 +46,8 @@
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
       <Release_Notes>[add] add CSM - Configuration File Path.vi 
 [improvement] Use Random Change Flag.vi in CSM utility palette. Remove the duplicated one in this repo
-[fix] #16 fix single element broke ¡°CSM - Read Configuration Variable.vim¡± and "CSM - Write Configuration Variable.vim"</Release_Notes>
+[fix] #16 fix single element broke ¡°CSM - Read Configuration Variable.vim¡± and "CSM - Write Configuration Variable.vim"
+[fix] minor fix #17</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
