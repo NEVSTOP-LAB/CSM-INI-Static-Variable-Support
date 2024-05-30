@@ -10,14 +10,16 @@
 		<Item Name="Default Ini Config File.vi" Type="VI" URL="../_Support/Default Ini Config File.vi"/>
 		<Item Name="global-csm-ini-db-change-flag.vi" Type="VI" URL="../_Support/global-csm-ini-db-change-flag.vi"/>
 		<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
-		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
-		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
-		<Item Name="CSM - Read Sessions.vi" Type="VI" URL="../_Support/CSM - Read Sessions.vi"/>
-		<Item Name="CSM - Read Key Names.vi" Type="VI" URL="../_Support/CSM - Read Key Names.vi"/>
 		<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 		<Item Name="Supported Type.vi" Type="VI" URL="../_Support/Supported Type.vi"/>
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
+	</Item>
+	<Item Name="As String" Type="Folder">
+		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
+		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
+		<Item Name="CSM - Read Sessions.vi" Type="VI" URL="../_Support/CSM - Read Sessions.vi"/>
+		<Item Name="CSM - Read Key Names.vi" Type="VI" URL="../_Support/CSM - Read Key Names.vi"/>
 		<Item Name="CSM - Read All Variable Names.vi" Type="VI" URL="../_Support/CSM - Read All Variable Names.vi"/>
 	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
