@@ -6,10 +6,10 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.SortType" Type="Int">3</Property>
 	<Item Name="_Support" Type="Folder">
+		<Item Name="CSM-Static-Variable-Manager.lvclass" Type="LVClass" URL="../_Support/CSM-Static-Variable-Manger/CSM-Static-Variable-Manager.lvclass"/>
 		<Item Name="Default Ini Config File.vi" Type="VI" URL="../_Support/Default Ini Config File.vi"/>
 		<Item Name="global-csm-ini-db-change-flag.vi" Type="VI" URL="../_Support/global-csm-ini-db-change-flag.vi"/>
 		<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
-		<Item Name="INI-FGV2.vi" Type="VI" URL="../_Support/INI-FGV2.vi"/>
 		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
 		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
 		<Item Name="CSM - Read Sessions.vi" Type="VI" URL="../_Support/CSM - Read Sessions.vi"/>
@@ -18,10 +18,12 @@
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 		<Item Name="Supported Type.vi" Type="VI" URL="../_Support/Supported Type.vi"/>
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
+		<Item Name="CSM - Read All Variable Names.vi" Type="VI" URL="../_Support/CSM - Read All Variable Names.vi"/>
 	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
 	<Item Name="CSM - Read Configuration Variable.vim" Type="VI" URL="../CSM - Read Configuration Variable.vim"/>
 	<Item Name="CSM - Write Configuration Variable.vim" Type="VI" URL="../CSM - Write Configuration Variable.vim"/>
+	<Item Name="CSM - Load Configuration Variables From File.vi" Type="VI" URL="../CSM - Load Configuration Variables From File.vi"/>
 	<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
 	<Item Name="CSM - Configuration File Path.vi" Type="VI" URL="../CSM - Configuration File Path.vi"/>
 </Library>

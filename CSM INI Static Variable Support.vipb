@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-05-25 15:16:14" Creator="liyao" Comments="" ID="12fe2dae81efea1e5209dcca4a4a42d8">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-05-30 21:17:00" Creator="liyao" Comments="" ID="3770d87900ca5a63e67534ac9cbaa6e0">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2024.4.0.15</Library_Version>
@@ -40,7 +40,9 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[update] update all icons</Release_Notes>
+      <Release_Notes>[important] #10 Support temp variables
+[add] Load more configuration files to provide more flexibility
+[update] update all icons</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
