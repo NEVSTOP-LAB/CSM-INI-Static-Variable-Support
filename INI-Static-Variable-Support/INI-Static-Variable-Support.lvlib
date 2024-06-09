@@ -23,8 +23,8 @@
 		<Item Name="CSM - Read All Variable Names.vi" Type="VI" URL="../_Support/CSM - Read All Variable Names.vi"/>
 	</Item>
 	<Item Name="Utility" Type="Folder">
-		<Item Name="CSM - Read Cluster Elements From Key.vi" Type="VI" URL="../CSM - Read Cluster Elements From Key.vi"/>
-		<Item Name="CSM - Read Cluster Elements From Session.vi" Type="VI" URL="../CSM - Read Cluster Elements From Session.vi"/>
+		<Item Name="CSM - Read Cluster Elements From Key.vim" Type="VI" URL="../CSM - Read Cluster Elements From Key.vim"/>
+		<Item Name="CSM - Read Cluster Elements From Session.vim" Type="VI" URL="../CSM - Read Cluster Elements From Session.vim"/>
 		<Item Name="Convert API String to Cluster(Default in Key).vim" Type="VI" URL="../Convert API String to Cluster(Default in Key).vim"/>
 		<Item Name="Convert API String to Cluster(Default in Session).vim" Type="VI" URL="../Convert API String to Cluster(Default in Session).vim"/>
 	</Item>
