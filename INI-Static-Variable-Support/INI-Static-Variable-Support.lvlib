@@ -29,6 +29,7 @@
 	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
 	<Item Name="CSM - Read Configuration Variable.vim" Type="VI" URL="../CSM - Read Configuration Variable.vim"/>
+	<Item Name="CSM - Mark All Temp Variables as Permanent.vi" Type="VI" URL="../CSM - Mark All Temp Variables as Permanent.vi"/>
 	<Item Name="CSM - Write Configuration Variable.vim" Type="VI" URL="../CSM - Write Configuration Variable.vim"/>
 	<Item Name="CSM - Load Configuration Variables From File.vi" Type="VI" URL="../CSM - Load Configuration Variables From File.vi"/>
 	<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
