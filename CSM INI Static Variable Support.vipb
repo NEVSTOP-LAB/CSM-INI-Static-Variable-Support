@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-06-19 22:55:52" Creator="liyao" Comments="" ID="fa724c5cca7ebbaf019ea6c688d978e5">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-06-21 21:26:18" Creator="liyao" Comments="" ID="e3f37ca091eeb40b47c654c596ccbac2">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2024.6.0.15</Library_Version>
@@ -49,7 +49,7 @@
 [update] #22 Add option for listing permanents variables only in `CSM - Read All Variable Names.vi`
 [update] #29 The strict support types is removed.
 [fix] #27 Skip loading default ini file if it's not existed.
-[fix] #26 #30 #31 fix corner and minor issues </Release_Notes>
+[fix] #26 #30 #31 #32 fix corner and minor issues </Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
