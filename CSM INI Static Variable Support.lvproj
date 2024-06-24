@@ -24,6 +24,9 @@
 		<Item Name=".github" Type="Folder" URL="../.github">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="CSM Tool" Type="Folder" URL="../CSM Tool">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="Example" Type="Folder" URL="../Example">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
