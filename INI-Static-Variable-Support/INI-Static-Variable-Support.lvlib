@@ -34,4 +34,5 @@
 	<Item Name="CSM - Write Configuration Variable.vim" Type="VI" URL="../CSM - Write Configuration Variable.vim"/>
 	<Item Name="CSM - Load Configuration Variables From File.vi" Type="VI" URL="../CSM - Load Configuration Variables From File.vi"/>
 	<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
+	<Item Name="CSM - Unload Configuration Variable File.vi" Type="VI" URL="../CSM - Unload Configuration Variable File.vi"/>
 </Library>

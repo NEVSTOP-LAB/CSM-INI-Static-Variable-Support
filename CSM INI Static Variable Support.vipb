@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-06-28 21:05:33" Creator="liyao" Comments="" ID="ea8913599604292fbfa36c72e058e26c">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-06-28 22:40:28" Creator="liyao" Comments="" ID="b0cb94e0a3b2588add0d6c5f3d4b9848">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2024.6.0.15</Library_Version>
@@ -44,6 +44,7 @@
 [add] #24 add CSM - Read Cluster Elements From Session.vi and CSM - Read Cluster Elements From Key.vi
 [add] add Convert API String to Cluster(Default in Session).vim and Convert API String to Cluster(Default in Key).vim
 [add] #21 add CSM - Mark All Temp Variables as Permanent.vi
+[add] #35 add CSM - Unload Configuration Variable File.vi
 [add] Add "All Temp Variable to Default Ini(F)" option to CSM - Sync Configuration Variables to File.vi
 [add] #33 add a debug tool for ini variables
 [update] Add terminal to show all configuration files' path in `CSM - Configuration File Path.vi`
@@ -180,9 +181,6 @@
       </Exclusions>
       <Exclusions>
         <Path>.github</Path>
-      </Exclusions>
-      <Exclusions>
-        <Path>csm-app.ini</Path>
       </Exclusions>
       <Place_Folder_Contents>
         <Path/>
