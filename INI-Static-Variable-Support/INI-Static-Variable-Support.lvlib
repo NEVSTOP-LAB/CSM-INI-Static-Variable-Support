@@ -12,7 +12,6 @@
 		<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
 		<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
-		<Item Name="Supported Type.vi" Type="VI" URL="../_Support/Supported Type.vi"/>
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
 	</Item>
 	<Item Name="As String" Type="Folder">
@@ -22,10 +21,18 @@
 		<Item Name="CSM - Read Key Names.vi" Type="VI" URL="../_Support/CSM - Read Key Names.vi"/>
 		<Item Name="CSM - Read All Variable Names.vi" Type="VI" URL="../_Support/CSM - Read All Variable Names.vi"/>
 	</Item>
+	<Item Name="Utility" Type="Folder">
+		<Item Name="CSM - Read Cluster Elements From Key.vim" Type="VI" URL="../CSM - Read Cluster Elements From Key.vim"/>
+		<Item Name="CSM - Read Cluster Elements From Session.vim" Type="VI" URL="../CSM - Read Cluster Elements From Session.vim"/>
+		<Item Name="Convert API String to Cluster(Default in Key).vim" Type="VI" URL="../Convert API String to Cluster(Default in Key).vim"/>
+		<Item Name="Convert API String to Cluster(Default in Session).vim" Type="VI" URL="../Convert API String to Cluster(Default in Session).vim"/>
+	</Item>
+	<Item Name="CSM - Configuration File Path.vi" Type="VI" URL="../CSM - Configuration File Path.vi"/>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
 	<Item Name="CSM - Read Configuration Variable.vim" Type="VI" URL="../CSM - Read Configuration Variable.vim"/>
+	<Item Name="CSM - Mark All Temp Variables as Permanent.vi" Type="VI" URL="../CSM - Mark All Temp Variables as Permanent.vi"/>
 	<Item Name="CSM - Write Configuration Variable.vim" Type="VI" URL="../CSM - Write Configuration Variable.vim"/>
 	<Item Name="CSM - Load Configuration Variables From File.vi" Type="VI" URL="../CSM - Load Configuration Variables From File.vi"/>
 	<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
-	<Item Name="CSM - Configuration File Path.vi" Type="VI" URL="../CSM - Configuration File Path.vi"/>
+	<Item Name="CSM - Unload Configuration Variable File.vi" Type="VI" URL="../CSM - Unload Configuration Variable File.vi"/>
 </Library>

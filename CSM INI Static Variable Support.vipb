@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-05-30 23:53:02" Creator="liyao" Comments="" ID="4b29e25e40c51338bb6a1ae5c7e39de7">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-06-28 22:40:28" Creator="liyao" Comments="" ID="b0cb94e0a3b2588add0d6c5f3d4b9848">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
-    <Library_Version>2024.4.0.15</Library_Version>
+    <Library_Version>2024.6.0.15</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>vip</Library_Output_Folder>
@@ -40,9 +40,19 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[important] #10 Support temp variables
-[add] Load more configuration files to provide more flexibility
-[update] update all icons</Release_Notes>
+      <Release_Notes>[important] #20 define operation of `variable &gt;&gt; value -&gt;&lt;variable&gt;` in `CSM - Populate Configuration Variables.vi`
+[add] #24 add CSM - Read Cluster Elements From Session.vi and CSM - Read Cluster Elements From Key.vi
+[add] add Convert API String to Cluster(Default in Session).vim and Convert API String to Cluster(Default in Key).vim
+[add] #21 add CSM - Mark All Temp Variables as Permanent.vi
+[add] #35 add CSM - Unload Configuration Variable File.vi
+[add] Add "All Temp Variable to Default Ini(F)" option to CSM - Sync Configuration Variables to File.vi
+[add] #33 add a debug tool for ini variables
+[update] Add terminal to show all configuration files' path in `CSM - Configuration File Path.vi`
+[update] #22 Add option for listing permanents variables only in `CSM - Read All Variable Names.vi`
+[update] #29 The strict support types is removed.
+[fix] #27 Skip loading default ini file if it's not existed.
+[fix] #38 # comments will not be included when reading ini string
+[fix] #26 #30 #31 #32 #34 fix corner and minor issues </Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -109,6 +119,12 @@
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
         <Path>&lt;user.lib&gt;\_NEVSTOP\Communicable State Machine(CSM)\More Templates</Path>
       </Additional_Destination>
+      <Additional_Destination>
+        <Name>CSM Tool</Name>
+        <LLB>false</LLB>
+        <Preserve_Hierarchy>true</Preserve_Hierarchy>
+        <Path>&lt;user.lib&gt;\_NEVSTOP\Communicable State Machine(CSM)\_tool</Path>
+      </Additional_Destination>
     </Destinations>
     <Source_Files>
       <Destination_Overrides>
@@ -128,6 +144,12 @@
         <Destination>0</Destination>
         <Additional_Destination>false</Additional_Destination>
         <Additional_Destination_Index>0</Additional_Destination_Index>
+      </Destination_Overrides>
+      <Destination_Overrides>
+        <Path>CSM Tool</Path>
+        <Destination>0</Destination>
+        <Additional_Destination>true</Additional_Destination>
+        <Additional_Destination_Index>1</Additional_Destination_Index>
       </Destination_Overrides>
       <Password_Overrides>
         <Path>.</Path>
@@ -160,9 +182,6 @@
       <Exclusions>
         <Path>.github</Path>
       </Exclusions>
-      <Exclusions>
-        <Path>csm-app.ini</Path>
-      </Exclusions>
       <Place_Folder_Contents>
         <Path/>
       </Place_Folder_Contents>
@@ -177,6 +196,9 @@
       </Place_Folder_Contents>
       <Place_Folder_Contents>
         <Path>Template</Path>
+      </Place_Folder_Contents>
+      <Place_Folder_Contents>
+        <Path>CSM Tool</Path>
       </Place_Folder_Contents>
     </Source_Files>
     <License_Agreement_Filepath>LICENSE</License_Agreement_Filepath>
@@ -234,6 +256,7 @@
       <close_labview_before_install>false</close_labview_before_install>
       <restart_labview_after_install>false</restart_labview_after_install>
       <skip_mass_compile_after_install>false</skip_mass_compile_after_install>
+      <install_into_global_environment>false</install_into_global_environment>
     </LabVIEW>
     <VI_Docs>
       <Edit_VI_Description>true</Edit_VI_Description>
