@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-06-28 22:40:28" Creator="liyao" Comments="" ID="b0cb94e0a3b2588add0d6c5f3d4b9848">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-07-16 17:56:15" Creator="liyao" Comments="" ID="d3bff007a47a15a827e9e6f15ef69376">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
-    <Library_Version>2024.6.0.15</Library_Version>
+    <Library_Version>2024.7.0.15</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>vip</Library_Output_Folder>
@@ -40,19 +40,7 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[important] #20 define operation of `variable &gt;&gt; value -&gt;&lt;variable&gt;` in `CSM - Populate Configuration Variables.vi`
-[add] #24 add CSM - Read Cluster Elements From Session.vi and CSM - Read Cluster Elements From Key.vi
-[add] add Convert API String to Cluster(Default in Session).vim and Convert API String to Cluster(Default in Key).vim
-[add] #21 add CSM - Mark All Temp Variables as Permanent.vi
-[add] #35 add CSM - Unload Configuration Variable File.vi
-[add] Add "All Temp Variable to Default Ini(F)" option to CSM - Sync Configuration Variables to File.vi
-[add] #33 add a debug tool for ini variables
-[update] Add terminal to show all configuration files' path in `CSM - Configuration File Path.vi`
-[update] #22 Add option for listing permanents variables only in `CSM - Read All Variable Names.vi`
-[update] #29 The strict support types is removed.
-[fix] #27 Skip loading default ini file if it's not existed.
-[fix] #38 # comments will not be included when reading ini string
-[fix] #26 #30 #31 #32 #34 fix corner and minor issues </Release_Notes>
+      <Release_Notes/>
     </Description>
     <Destinations>
       <Toolkit_VIs>
