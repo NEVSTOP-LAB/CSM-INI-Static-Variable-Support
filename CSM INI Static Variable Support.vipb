@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-08-27 20:00:59" Creator="liyao" Comments="" ID="e1459e0cc37666c680f415c8fe121e86">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-08-27 20:18:45" Creator="liyao" Comments="" ID="1a99459fc5a04ee44379ca4a18ae4cb1">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2024.8.0.15</Library_Version>
@@ -169,6 +169,9 @@
       </Exclusions>
       <Exclusions>
         <Path>.github</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>testcases</Path>
       </Exclusions>
       <Place_Folder_Contents>
         <Path/>
