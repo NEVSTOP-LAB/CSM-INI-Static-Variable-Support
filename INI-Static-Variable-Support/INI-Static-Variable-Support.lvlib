@@ -6,6 +6,10 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.SortType" Type="Int">3</Property>
 	<Item Name="_Support" Type="Folder">
+		<Item Name="Instances" Type="Folder">
+			<Item Name="_Read CSM Log Filter Rules - v1.0.vi" Type="VI" URL="../_Support/instances/_Read CSM Log Filter Rules - v1.0.vi"/>
+			<Item Name="_CSM - Read Log Filter Rules - v1.0.vi" Type="VI" URL="../_Support/instances/_CSM - Read Log Filter Rules - v1.0.vi"/>
+		</Item>
 		<Item Name="CSM-Static-Variable-Manager.lvclass" Type="LVClass" URL="../_Support/CSM-Static-Variable-Manger/CSM-Static-Variable-Manager.lvclass"/>
 		<Item Name="Default Ini Config File.vi" Type="VI" URL="../_Support/Default Ini Config File.vi"/>
 		<Item Name="global-csm-ini-db-change-flag.vi" Type="VI" URL="../_Support/global-csm-ini-db-change-flag.vi"/>
@@ -15,6 +19,7 @@
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
 	</Item>
 	<Item Name="As String" Type="Folder">
+		<Item Name="CSM - Read Log Filter Rules from INI Strings.vi" Type="VI" URL="../_Support/CSM - Read Log Filter Rules from INI Strings.vi"/>
 		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
 		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
 		<Item Name="CSM - Read Sessions.vi" Type="VI" URL="../_Support/CSM - Read Sessions.vi"/>
@@ -26,6 +31,7 @@
 		<Item Name="CSM - Read Cluster Elements From Session.vim" Type="VI" URL="../CSM - Read Cluster Elements From Session.vim"/>
 		<Item Name="Convert API String to Cluster(Default in Key).vim" Type="VI" URL="../Convert API String to Cluster(Default in Key).vim"/>
 		<Item Name="Convert API String to Cluster(Default in Session).vim" Type="VI" URL="../Convert API String to Cluster(Default in Session).vim"/>
+		<Item Name="Read CSM Log Filter Rules.vi" Type="VI" URL="../_Support/Read CSM Log Filter Rules.vi"/>
 	</Item>
 	<Item Name="CSM - Configuration File Path.vi" Type="VI" URL="../CSM - Configuration File Path.vi"/>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
