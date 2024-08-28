@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-08-27 20:18:45" Creator="liyao" Comments="" ID="1a99459fc5a04ee44379ca4a18ae4cb1">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-08-28 14:09:50" Creator="liyao" Comments="" ID="fe6bd9fb9a3971089c0e4ff0d2491d05">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2024.8.0.15</Library_Version>
@@ -40,7 +40,8 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[upgrade] add "VI Reference" to all CSMs</Release_Notes>
+      <Release_Notes>[upgrade] add "VI Reference" to all CSMs
+[add] Add Read Array Key.vi in LabVIEW Config Library.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -247,6 +248,7 @@
       <close_labview_before_install>false</close_labview_before_install>
       <restart_labview_after_install>false</restart_labview_after_install>
       <skip_mass_compile_after_install>false</skip_mass_compile_after_install>
+      <install_into_global_environment>false</install_into_global_environment>
     </LabVIEW>
     <VI_Docs>
       <Edit_VI_Description>true</Edit_VI_Description>
