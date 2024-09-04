@@ -9,6 +9,7 @@
 </Property>
 	<Item Name="Controls" Type="Folder">
 		<Item Name="Config.ctl" Type="VI" URL="../Config.ctl"/>
+		<Item Name="LineToken.ctl" Type="VI" URL="../LineToken.ctl"/>
 	</Item>
 	<Item Name="Open/Close" Type="Folder">
 		<Item Name="Close.vi" Type="VI" URL="../Close.vi"/>
@@ -44,12 +45,15 @@
 		<Item Name="Remove Section.vi" Type="VI" URL="../Remove Section.vi"/>
 	</Item>
 	<Item Name="Support" Type="Folder">
+		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Item Name="Delete.vi" Type="VI" URL="../Delete.vi"/>
 		<Item Name="New.vi" Type="VI" URL="../New.vi"/>
+		<Item Name="Key Information.vi" Type="VI" URL="../Key Information.vi"/>
 		<Item Name="Parse Token.vi" Type="VI" URL="../Parse Token.vi"/>
 		<Item Name="Parse Value.vi" Type="VI" URL="../Parse Value.vi"/>
 		<Item Name="String Escape.vi" Type="VI" URL="../String Escape.vi"/>
 		<Item Name="String Unescape.vi" Type="VI" URL="../String Unescape.vi"/>
 	</Item>
+	<Item Name="MultipleLines to String.vi" Type="VI" URL="../MultipleLines to String.vi"/>
 	<Item Name="VI Tree.vi" Type="VI" URL="../VI Tree.vi"/>
 </Library>
