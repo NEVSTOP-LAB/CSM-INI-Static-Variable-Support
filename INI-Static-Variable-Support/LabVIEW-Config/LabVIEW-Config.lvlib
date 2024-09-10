@@ -53,7 +53,7 @@
 		<Item Name="Parse Value.vi" Type="VI" URL="../Parse Value.vi"/>
 		<Item Name="String Escape.vi" Type="VI" URL="../String Escape.vi"/>
 		<Item Name="String Unescape.vi" Type="VI" URL="../String Unescape.vi"/>
+		<Item Name="MultipleLines to String.vi" Type="VI" URL="../MultipleLines to String.vi"/>
 	</Item>
-	<Item Name="MultipleLines to String.vi" Type="VI" URL="../MultipleLines to String.vi"/>
 	<Item Name="VI Tree.vi" Type="VI" URL="../VI Tree.vi"/>
 </Library>
