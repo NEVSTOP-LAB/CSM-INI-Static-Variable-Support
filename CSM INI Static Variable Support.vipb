@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-09-04 20:39:48" Creator="liyao" Comments="" ID="5200ab3a3f1013a79be53b5b64698426">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2024-09-10 14:38:12" Creator="liyao" Comments="" ID="abbd325c9916a3e69ebc15864562cbfd">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
-    <Library_Version>2024.8.0.15</Library_Version>
+    <Library_Version>2024.9.0.15</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>vip</Library_Output_Folder>
@@ -41,8 +41,9 @@
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
       <Release_Notes>[add] #42 add "CSM - Read Log Filter Rules from INI Strings" to load log filter rules in config file.
+[add] #45 add "CSM - Read File Logger Configuration from INI String"
 [add] Add Read Array Key.vi in LabVIEW Config Library.
-[add] #41 Support reading multi-line Key.
+[add] #41 Support Multi-lines for key in LabVIEW-Config Library
 [upgrade] add "VI Reference" to all CSMs
 </Release_Notes>
     </Description>
