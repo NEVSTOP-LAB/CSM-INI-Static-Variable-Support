@@ -37,10 +37,9 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="testcases" Type="Folder">
-			<Item Name="_support" Type="Folder" URL="../testcases/_support">
-				<Property Name="NI.DISK" Type="Bool">true</Property>
-			</Item>
-			<Item Name="csm-ini-variable-addon.lvclass" Type="LVClass" URL="../testcases/csm-ini-variable-addon.lvclass"/>
+			<Item Name="_support" Type="Folder"/>
+			<Item Name="csm-ini-variable-addon.lvclass" Type="LVClass" URL="../testcases/csm-ini-variable-addon/csm-ini-variable-addon.lvclass"/>
+			<Item Name="labview-config-library.lvclass" Type="LVClass" URL="../testcases/labview-config-library/labview-config-library.lvclass"/>
 		</Item>
 		<Item Name="CSM INI Static Variable Support.vipb" Type="Document" URL="../CSM INI Static Variable Support.vipb"/>
 		<Item Name="README.md" Type="Document" URL="../README.md"/>

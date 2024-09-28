@@ -7,7 +7,9 @@
 	<Property Name="NI.SortType" Type="Int">3</Property>
 	<Item Name="_Support" Type="Folder">
 		<Item Name="Instances" Type="Folder">
+			<Item Name="_Read CSM File Logger Configuration - v1.0.vi" Type="VI" URL="../_Support/instances/_Read CSM File Logger Configuration - v1.0.vi"/>
 			<Item Name="_Read CSM Log Filter Rules - v1.0.vi" Type="VI" URL="../_Support/instances/_Read CSM Log Filter Rules - v1.0.vi"/>
+			<Item Name="_CSM - Read File Logger Configuration - v1.0.vi" Type="VI" URL="../_Support/instances/_CSM - Read File Logger Configuration - v1.0.vi"/>
 			<Item Name="_CSM - Read Log Filter Rules - v1.0.vi" Type="VI" URL="../_Support/instances/_CSM - Read Log Filter Rules - v1.0.vi"/>
 		</Item>
 		<Item Name="CSM-Static-Variable-Manager.lvclass" Type="LVClass" URL="../_Support/CSM-Static-Variable-Manger/CSM-Static-Variable-Manager.lvclass"/>
@@ -20,6 +22,7 @@
 	</Item>
 	<Item Name="As String" Type="Folder">
 		<Item Name="CSM - Read Log Filter Rules from INI Strings.vi" Type="VI" URL="../_Support/CSM - Read Log Filter Rules from INI Strings.vi"/>
+		<Item Name="CSM - Read File Logger Configuration from INI String.vi" Type="VI" URL="../_Support/CSM - Read File Logger Configuration from INI String.vi"/>
 		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
 		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
 		<Item Name="CSM - Read Sessions.vi" Type="VI" URL="../_Support/CSM - Read Sessions.vi"/>
