@@ -12,7 +12,7 @@
 			<Item Name="_CSM - Read File Logger Configuration - v1.0.vi" Type="VI" URL="../_Support/instances/_CSM - Read File Logger Configuration - v1.0.vi"/>
 			<Item Name="_CSM - Read Log Filter Rules - v1.0.vi" Type="VI" URL="../_Support/instances/_CSM - Read Log Filter Rules - v1.0.vi"/>
 		</Item>
-		<Item Name="CSM-Static-Variable-Manager.lvclass" Type="LVClass" URL="../_Support/CSM-Static-Variable-Manger/CSM-Static-Variable-Manager.lvclass"/>
+		<Item Name="CSM-Static-Variable-Manager.lvclass" Type="LVClass" URL="../_Support/CSMSVMgr/CSM-Static-Variable-Manager.lvclass"/>
 		<Item Name="Default Ini Config File.vi" Type="VI" URL="../_Support/Default Ini Config File.vi"/>
 		<Item Name="global-csm-ini-db-change-flag.vi" Type="VI" URL="../_Support/global-csm-ini-db-change-flag.vi"/>
 		<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
