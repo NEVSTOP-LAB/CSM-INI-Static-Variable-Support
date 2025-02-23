@@ -48,6 +48,7 @@
 				<Item Name="_csm_user_lib_dir.vi" Type="VI" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/_scripts/_csm_user_lib_dir.vi"/>
 				<Item Name="API String Arguments Support.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/addons/API-String-Arugments-Support/API String Arguments Support.lvlib"/>
 				<Item Name="Communicable State Machine.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/Communicable State Machine.lvlib"/>
+				<Item Name="CSM Loop Support.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/addons/Loop-Support/CSM Loop Support.lvlib"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Add State(s) to Queue__JKI_lib_State_Machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Add State(s) to Queue__JKI_lib_State_Machine.vi"/>
@@ -432,7 +433,7 @@
 				<Property Name="Source[0].itemID" Type="Str">{A35DF267-AD32-478D-9CDA-BD4B18D2E74F}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Example/Example/CSM with INI Config.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref"></Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].Container.applyInclusion" Type="Bool">true</Property>
@@ -475,7 +476,7 @@
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Example/Example/CSM with INI Config.vi</Property>
+				<Property Name="Source[2].itemID" Type="Ref"></Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">3</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">My Application</Property>

@@ -6,9 +6,9 @@
 [![Image](https://www.vipm.io/package/nevstop_lib_csm_ini_static_variable_support/badge.svg?metric=stars)](https://www.vipm.io/package/nevstop_lib_csm_ini_static_variable_support/)
 [![GitHub all releases](https://img.shields.io/github/downloads/NEVSTOP-LAB/CSM-INI-Static-Variable-Support/total)](https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support/releases)
 
-The library is now offering `${variable}` support for CSM, which is loaded from the first caught ini file within the application folder or the topmost VI's parent directory. You can either specify a section name or use the pattern of `${section.variable:defaultValue}` if you leave the section name blank.
+该库现在为 CSM 提供 `${variable}` 支持，该变量从应用程序文件夹或最顶层 VI 的父目录中的第一个捕获的 ini 文件加载。您可以指定一个节名称，或者如果您将节名称留空，则使用 `${section.variable:defaultValue}` 模式。
 
 ![image](.github/CSM-INI-Static-Variable-Support.png)
 
-**Open Source Declaration**
- - A copy of [LabVIEW-Config](https://github.com/rcpacini/LabVIEW-Config) by [@rcpacini](https://github.com/rcpacini) is included and used.
+**开源声明**
+ - 包含并使用了 [@rcpacini](https://github.com/rcpacini) 的 [LabVIEW-Config](https://github.com/rcpacini/LabVIEW-Config) 的副本。
