@@ -4,3 +4,6 @@
 *.lvlps
 /*.xml
 /_data/*
+/csm-app.ini
+*.lvcsm
+.$*

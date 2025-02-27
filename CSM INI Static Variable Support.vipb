@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-01-16 22:52:04" Creator="liyao" Comments="" ID="b8af1a3aec2680be47d2f37cb6cedfde">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-02-27 23:07:08" Creator="liyao" Comments="" ID="9044aff189734bd0f3b5289721c22942">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
-    <Library_Version>2025.1.0.15</Library_Version>
+    <Library_Version>2025.2.0.15</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>vip</Library_Output_Folder>
@@ -40,7 +40,9 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[fix] Fix a issue that default ini configuration path error in a corner case.</Release_Notes>
+      <Release_Notes>[important] #59 refactor all examples
+[update] #55 change some paths to avoid it be to long.
+[fix] #60 fix bug that numbers followed by a backslash were incorrectly interpreted as ASCII codes.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
