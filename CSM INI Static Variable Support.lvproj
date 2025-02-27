@@ -37,9 +37,10 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="testcases" Type="Folder">
+			<Property Name="NI.SortType" Type="Int">3</Property>
 			<Item Name="_support" Type="Folder"/>
-			<Item Name="csm-ini-variable-addon.lvclass" Type="LVClass" URL="../testcases/csm-ini-variable-addon/csm-ini-variable-addon.lvclass"/>
 			<Item Name="labview-config-library.lvclass" Type="LVClass" URL="../testcases/labview-config-library/labview-config-library.lvclass"/>
+			<Item Name="csm-ini-variable-addon.lvclass" Type="LVClass" URL="../testcases/csm-ini-variable-addon/csm-ini-variable-addon.lvclass"/>
 		</Item>
 		<Item Name="CSM INI Static Variable Support.vipb" Type="Document" URL="../CSM INI Static Variable Support.vipb"/>
 		<Item Name="README.md" Type="Document" URL="../README.md"/>
@@ -48,7 +49,6 @@
 				<Item Name="_csm_user_lib_dir.vi" Type="VI" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/_scripts/_csm_user_lib_dir.vi"/>
 				<Item Name="API String Arguments Support.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/addons/API-String-Arugments-Support/API String Arguments Support.lvlib"/>
 				<Item Name="Communicable State Machine.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/Communicable State Machine.lvlib"/>
-				<Item Name="CSM Loop Support.lvlib" Type="Library" URL="/&lt;userlib&gt;/_NEVSTOP/Communicable State Machine(CSM)/addons/Loop-Support/CSM Loop Support.lvlib"/>
 			</Item>
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Add State(s) to Queue__JKI_lib_State_Machine.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/State Machine/_JKI_lib_State_Machine.llb/Add State(s) to Queue__JKI_lib_State_Machine.vi"/>
