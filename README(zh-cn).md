@@ -6,9 +6,78 @@
 [![Image](https://www.vipm.io/package/nevstop_lib_csm_ini_static_variable_support/badge.svg?metric=stars)](https://www.vipm.io/package/nevstop_lib_csm_ini_static_variable_support/)
 [![GitHub all releases](https://img.shields.io/github/downloads/NEVSTOP-LAB/CSM-INI-Static-Variable-Support/total)](https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support/releases)
 
-该库现在为 CSM 提供 `${variable}` 支持，该变量从应用程序文件夹或最顶层 VI 的父目录中的第一个捕获的 ini 文件加载。您可以指定一个节名称，或者如果您将节名称留空，则使用 `${section.variable:defaultValue}` 模式。
+配置文件编写应用程序必备的功能之一。这个库的目的是为了给 CSM 提供简单易用的配置文件支持功能，能够在不显式的读写配置文件的情况下，让用户通过配置文件来配置应用程序。
 
-![image](.github/CSM-INI-Static-Variable-Support.png)
+## 安装
 
-**开源声明**
- - 包含并使用了 [@rcpacini](https://github.com/rcpacini) 的 [LabVIEW-Config](https://github.com/rcpacini/LabVIEW-Config) 的副本。
+您可以通过 VIPM 安装这个库，安装完毕后，可以在 CSM 的 Addon 函数选板中找到这个库的函数。
+
+## 设计
+
+CSM INI-Static-Variable-Support 库的设计如下图所示：
+
+![image](.github/csm-ini-variable-cache-design.svg)
+
+它的特点有：
+
+1. 支持默认的配置文件，这个配置文件会在第一次调用这个库的函数时隐式加载，无需用户显式的加载配置文件。
+2. 支持多配置文件，可以通过 Multi-File Support 中的函数来加载多个配置文件。
+3. 在内存中创建一个缓存副本，应用程序实际读取的配置信息来源于缓存副本
+4. 配置文件、内存副本都是 ini 文件格式，支持节、键值对。
+5. 全局创建了修改标记，能够在读取VI处缓存配置信息，当配置发生修改时才真正再次读取内存副本，效率高。
+
+> [!IMPORTANT]
+> **开源声明**: 包含并使用了 [@rcpacini](https://github.com/rcpacini) 的 [LabVIEW-Config](https://github.com/rcpacini/LabVIEW-Config) 的副本。
+
+> [!NOTE]
+> 默认配置文件的位置：
+>
+> - 开发状态, Application Directory 下的第一个 ini配置文件，没有时默认的配置文件名称为 csm-app.ini
+> - 编译后，exe 目录下 exe同名的 ini 配置文件。(LabVIEW 编译后必然产生这样一个配置文件)
+>
+
+> [!NOTE]
+> 多配置文件的场景
+>
+> - 加载时，后加载的配置文件会覆盖前加载的配置文件中的相同配置项
+> - 保存 cache 到文件时，会将更改保存到后加载的配置文件中。
+>
+
+> [!WARNING]
+> 请注意，由于这个库使用一个全局的缓存修改标志，频繁的配置信息，会导致读取VI处的缓存机制失效，因此这个库不适合频繁的配置信息修改的场景。
+
+## 应用场景
+
+### 作为 CSM 的参数被解析后使用
+
+为 CSM 提供 `${section.variable:defaultValue}` 的支持, 直接使用在 CSM 发送的文本消息中。
+
+> [!TIP]
+> section 可以缺省，默认的情况下，使用 SectionName=LabVIEW 的配置段
+> defaultvalue 可以缺省，默认为 ""
+>
+
+![image](.github/1.png)
+
+### 通过提供 prototype 载入对应的配置
+
+通过提供 prototype 载入对应的配置。既可以从section 中载入，也可以从 key 中载入。
+
+![image](.github/2.png)
+
+### 固化CSM API 参数
+
+提供了固化CSM API 参数的功能。在这个场景下，CSM API的参数优先级是： CSM API参数 > 配置文件参数 > 默认Constant参数。 例如示例中，很容易将串口初始化的参数，固化在配置文件中。
+
+- 初始化时，如果发送了参数， 就会使用发送的参数；
+- 如果没有发送参数，就会使用配置文件中的参数；
+- 如果配置文件中没有参数，就会使用默认的Constant参数。
+- 参数都可以部分提供，缺省的参数会使用下一级优先级的配置信息。
+
+![image](.github/3.png)
+
+### 多文件的配置系统
+
+通过多文件的配置系统，可以实现分布式的配置文件系统。
+
+![image](.github/4.png)
