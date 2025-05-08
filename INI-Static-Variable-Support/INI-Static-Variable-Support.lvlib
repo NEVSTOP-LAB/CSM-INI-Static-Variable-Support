@@ -19,6 +19,7 @@
 		<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
+		<Item Name="Is HexStr Content.vi" Type="VI" URL="../_Support/Is HexStr Content.vi"/>
 	</Item>
 	<Item Name="As String" Type="Folder">
 		<Item Name="CSM - Read Log Filter Rules from INI Strings.vi" Type="VI" URL="../_Support/CSM - Read Log Filter Rules from INI Strings.vi"/>
