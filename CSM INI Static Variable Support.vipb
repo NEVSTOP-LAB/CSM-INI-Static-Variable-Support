@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-05-14 14:02:38" Creator="liyao" Comments="" ID="8d3bcf6732862c17ff7968eb8941adb2">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-05-14 15:07:55" Creator="liyao" Comments="" ID="ef25fd04583442379698076407c2a985">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2025.5.0.1</Library_Version>
@@ -40,7 +40,7 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[add] #51 nested variable support
+      <Release_Notes>[add] #51#61#62 nested variable support
 [update] add cache for "CSM - Read Cluster Elements From Key.vim" and "CSM - Read Cluster Elements From Session.vim"
 [update] update example "6. import Config.ini with __include section.vi"
 [fix] #74 Fix "CSM - Unload configuration variable file.vi" behavior by @KivenJia
