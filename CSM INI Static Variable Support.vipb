@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-05-12 21:43:11" Creator="liyao" Comments="" ID="fbf0be7d5325dc576ca209a24cbf4730">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-05-14 10:09:14" Creator="liyao" Comments="" ID="91fdec1dddaf358e484490acba0e5e7b">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2025.5.0.1</Library_Version>
@@ -40,9 +40,11 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[fix] #74 Fix "CSM - Unload configuration variable file.vi" behavior by @KivenJia
+      <Release_Notes>[update] update example "6. import Config.ini with __include section.vi"
+[fix] #74 Fix "CSM - Unload configuration variable file.vi" behavior by @KivenJia
 [fix] #76 Fix the issue that __include section will be removed after loading to cache.
-[fix] #75 Fix that if value contains '#', parsing will fail.</Release_Notes>
+[fix] #75 Fix that if value contains '#', parsing will fail.
+</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
