@@ -48,4 +48,5 @@
 	<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
 	<Item Name="CSM - Unload Configuration Variable File.vi" Type="VI" URL="../CSM - Unload Configuration Variable File.vi"/>
 	<Item Name="CSM - Reset to Default.vi" Type="VI" URL="../CSM - Reset to Default.vi"/>
+	<Item Name="CSM - Restore Variable Value.vi" Type="VI" URL="../CSM - Restore Variable Value.vi"/>
 </Library>
