@@ -79,3 +79,61 @@ Provides the function of fixing CSM API parameters. In this scenario, the priori
 Implement a distributed configuration file system through the multi-file configuration system.
 
 ![Example](.github/4.png)
+
+### Referencing Configuration Files with [__include]
+
+The `[__include]` section allows you to reference other configuration files, enabling modular and reusable configuration setups. Included files are loaded in advance, similar to the multi-file scenario.
+
+> [!TIP]
+>
+> - Be aware that referencing files can lead to circular dependencies, causing infinite loops. The library maintains a list of loaded configuration files and will skip loading a file if it detects it has already been loaded.
+
+![image](.github/6.png)
+
+### Nested Variable
+
+CSM INI-Static-Variable-Support supports parsing nested variables, allowing you to reference other keys within a key for more flexible configuration. The format is `${section.variable:defaultValue}`.
+
+1. **Read API:** `CSM INI Read String.vi` reads the original configuration value without parsing nested variables. All other read APIs will automatically resolve nested variables.
+2. **Write API:** All write APIs overwrite the configuration value. In general, keys containing nested references are not directly modified by write operations.
+
+``` ini
+// default configuration
+[network]
+host = ${protocol}://${ip}:${port}
+protocol = http
+ip = "192.168.0.1"
+port = 8080
+url = ${host}/API/v1/Get
+
+[case1]
+addr = "${network.host}/API/v1/case1/Get"
+
+[case2]
+network.host = 127.0.0.1
+addr = "${network.host}/API/v2/case2/Get"
+
+[RT]
+select = 1
+addr = ${case${select}.addr}
+
+[info]
+operator = mary
+date = #fill by user
+time =  #fill by user
+test = board
+
+[file]
+root = d:/data
+path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms
+```
+
+For example, with the above configuration file:
+
+**Scenario 1:** Reading the value of `${file.path}` will return an actual file path dynamically assembled from other configuration items, allowing for flexible path definitions.
+
+**Scenario 2:** The `[case1]` and `[case2]` sections define two different sets of related configuration information. By modifying the value of `${RT.select}`, you can easily switch between multiple configurations when accessing `${RT.select}`.
+
+Refer to the sample project for more detailed usage information.
+
+![image](.github/7.png)
