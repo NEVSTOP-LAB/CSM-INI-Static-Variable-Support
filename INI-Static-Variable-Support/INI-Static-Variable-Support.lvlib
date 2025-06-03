@@ -19,6 +19,9 @@
 		<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
+		<Item Name="Is HexStr Content.vi" Type="VI" URL="../_Support/Is HexStr Content.vi"/>
+		<Item Name="Parse Contained Variables.vi" Type="VI" URL="../_Support/Parse Contained Variables.vi"/>
+		<Item Name="Populate String with INI Variable.vi" Type="VI" URL="../_Support/Populate String with INI Variable.vi"/>
 	</Item>
 	<Item Name="As String" Type="Folder">
 		<Item Name="CSM - Read Log Filter Rules from INI Strings.vi" Type="VI" URL="../_Support/CSM - Read Log Filter Rules from INI Strings.vi"/>
@@ -45,4 +48,5 @@
 	<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
 	<Item Name="CSM - Unload Configuration Variable File.vi" Type="VI" URL="../CSM - Unload Configuration Variable File.vi"/>
 	<Item Name="CSM - Reset to Default.vi" Type="VI" URL="../CSM - Reset to Default.vi"/>
+	<Item Name="CSM - Restore Variable Value.vi" Type="VI" URL="../CSM - Restore Variable Value.vi"/>
 </Library>

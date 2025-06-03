@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-04-28 23:05:22" Creator="liyao" Comments="" ID="931a2e73049302fe4161cece9c0af25a">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-05-14 15:07:55" Creator="liyao" Comments="" ID="ef25fd04583442379698076407c2a985">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
-    <Library_Version>2025.4.0.15</Library_Version>
+    <Library_Version>2025.5.0.1</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>vip</Library_Output_Folder>
@@ -40,9 +40,13 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[feature] #70 config file now support _include section, which helps to load reference config files.
-[fix] #68 unsupported api string datatype will not be saved to csm ini varaible cache by default
-[add] #71 add example "5. Write and Read Configuration.vi"</Release_Notes>
+      <Release_Notes>[add] #51#61#62 nested variable support
+[update] add cache for "CSM - Read Cluster Elements From Key.vim" and "CSM - Read Cluster Elements From Session.vim"
+[update] update example "6. import Config.ini with __include section.vi"
+[fix] #74 Fix "CSM - Unload configuration variable file.vi" behavior by @KivenJia
+[fix] #76 Fix the issue that __include section will be removed after loading to cache.
+[fix] #75 Fix that if value contains '#', parsing will fail.
+</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
