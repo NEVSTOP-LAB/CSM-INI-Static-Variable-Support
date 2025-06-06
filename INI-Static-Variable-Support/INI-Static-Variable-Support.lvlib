@@ -16,6 +16,7 @@
 		<Item Name="Default Ini Config File.vi" Type="VI" URL="../_Support/Default Ini Config File.vi"/>
 		<Item Name="global-csm-ini-db-change-flag.vi" Type="VI" URL="../_Support/global-csm-ini-db-change-flag.vi"/>
 		<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
+		<Item Name="_Def-Ini-Variable.ctl" Type="VI" URL="../_Support/_Def-Ini-Variable.ctl"/>
 		<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
