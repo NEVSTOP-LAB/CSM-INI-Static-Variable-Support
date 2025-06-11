@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-05-14 15:07:55" Creator="liyao" Comments="" ID="ef25fd04583442379698076407c2a985">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-06-11 13:48:33" Creator="liyao" Comments="" ID="6d4d52a600de69cdb40b2c96b72d19d6">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
-    <Library_Version>2025.5.0.1</Library_Version>
+    <Library_Version>2025.6.0.1</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>vip</Library_Output_Folder>
@@ -17,8 +17,8 @@
   </Library_General_Settings>
   <Advanced_Settings>
     <Package_Dependencies>
-      <Additional_External_Dependencies>nevstop_lib_communicable_state_machine &gt;=2025.4.28.215857</Additional_External_Dependencies>
-      <Additional_External_Dependencies>nevstop_lib_csm_api_string_arguments_support &gt;=2025.4.28.222847</Additional_External_Dependencies>
+      <Additional_External_Dependencies>nevstop_lib_communicable_state_machine &gt;=2025.6.3.135832</Additional_External_Dependencies>
+      <Additional_External_Dependencies>nevstop_lib_csm_api_string_arguments_support &gt;=2025.6.3.115420</Additional_External_Dependencies>
       <Package_Conflicts>nevstop_lib_jki_state_machine++ &gt;=2023.8.5.2239</Package_Conflicts>
     </Package_Dependencies>
     <Custom_Action_VIs>
@@ -40,13 +40,8 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[add] #51#61#62 nested variable support
-[update] add cache for "CSM - Read Cluster Elements From Key.vim" and "CSM - Read Cluster Elements From Session.vim"
-[update] update example "6. import Config.ini with __include section.vi"
-[fix] #74 Fix "CSM - Unload configuration variable file.vi" behavior by @KivenJia
-[fix] #76 Fix the issue that __include section will be removed after loading to cache.
-[fix] #75 Fix that if value contains '#', parsing will fail.
-</Release_Notes>
+      <Release_Notes>[fix] CSM - Sync Configuration Variables to File.vi will be skipped if no change to ini cache.
+[fix] #81 #82 fix logic of priority oder for INI variables in multiple sections.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
