@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-09-03 09:14:20" Creator="liyao" Comments="" ID="de756e3939521afb7a2fca6f211b4196">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-09-03 22:17:57" Creator="liyao" Comments="" ID="ba566c748cb8acc78483d87657f494f4">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2025.9.0.1</Library_Version>
@@ -40,7 +40,7 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes/>
+      <Release_Notes>[fix] #87 improve performance of "Sync to File.vi".</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -172,9 +172,6 @@
       </Exclusions>
       <Exclusions>
         <Path>testcases</Path>
-      </Exclusions>
-      <Exclusions>
-        <Path>CSM INI Static Variable Support.lvcsm</Path>
       </Exclusions>
       <Exclusions>
         <Path>README(zh-cn).md</Path>
