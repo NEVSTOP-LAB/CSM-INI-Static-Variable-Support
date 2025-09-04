@@ -12,9 +12,9 @@ on:
       - '**.drawio'
       - '**.vipb'
       - '**.png'
+      - '**.svg'
       - '**.json'
       - '**.yml'
-      - '**.svg'
   
   # Also add paths-ignore for pull requests
   pull_request:
@@ -26,9 +26,9 @@ on:
       - '**.drawio'
       - '**.vipb'
       - '**.png'
+      - '**.svg'
       - '**.json'
       - '**.yml'
-      - '**.svg'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
