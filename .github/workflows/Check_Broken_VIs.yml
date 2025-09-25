@@ -11,6 +11,25 @@ on:
       - '**.txt'
       - '**.drawio'
       - '**.vipb'
+      - '**.png'
+      - '**.svg'
+      - '**.json'
+      - '**.yml'
+  
+  # Also add paths-ignore for pull requests
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+    paths-ignore:
+      - '**.md'
+      - '**.txt'
+      - '**.drawio'
+      - '**.vipb'
+      - '**.png'
+      - '**.svg'
+      - '**.json'
+      - '**.yml'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

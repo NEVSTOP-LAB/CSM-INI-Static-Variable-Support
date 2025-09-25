@@ -6,98 +6,98 @@
 [![Stars](https://www.vipm.io/package/nevstop_lib_csm_ini_static_variable_support/badge.svg?metric=stars)](https://www.vipm.io/package/nevstop_lib_csm_ini_static_variable_support/)
 [![Downloads](https://img.shields.io/github/downloads/NEVSTOP-LAB/CSM-INI-Static-Variable-Support/total)](https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support/releases)
 
-Configuration files are essential for application development. This library provides simple and easy-to-use configuration file support for CSM, allowing users to configure applications without explicitly reading or writing configuration files.
+Configuration files are essential components in application development. This library provides simple, user-friendly configuration file support for CSM, enabling users to configure applications without the need to explicitly read from or write to configuration files.
 
 ## Installation
 
-You can install this library through VIPM. After installation, you can find the library functions in the Addon palette of CSM.
+Install this library via VIPM. After installation, you'll find the library functions in the CSM Addon palette.
 
 ## Design
 
-The design of the CSM INI-Static-Variable-Support library is shown below:
+The architecture of the CSM INI-Static-Variable-Support library is illustrated below:
 
 ![Design](.github/csm-ini-variable-cache-design.svg)
 
-Features include:
+Key features include:
 
-1. Support for default configuration files, which are implicitly loaded when the library functions are first called, without requiring users to explicitly load them.
-2. Support for multiple configuration files, which can be loaded by the functions in Multi-File Support.
-3. Creation of a cache copy in memory, with the actual configuration information read by the application coming from the cache copy.
-4. Both the configuration file and the memory copy are in the ini file format, supporting sections and key-value pairs.
-5. A global modification flag helps cache configuration information at the read VI, and the memory copy is read again only when the configuration is modified, ensuring efficiency.
+1. **Default Configuration Handling**: Automatically loads default configuration files upon first library function call, eliminating the need for explicit loading by users.
+2. **Multi-File Support**: Enables loading of multiple configuration files through dedicated functions.
+3. **Memory Caching**: Maintains an in-memory cache copy, with applications retrieving configuration information from this cached data.
+4. **INI Format Compatibility**: Both configuration files and memory copies use standard INI format, supporting sections and key-value pairs.
+5. **Efficient Caching Mechanism**: Uses a global modification flag to optimize performance by only re-reading the memory copy when configurations are modified.
 
 > [!IMPORTANT]
-> **Open Source Statement**: Contains and uses a copy of [LabVIEW-Config](https://github.com/rcpacini/LabVIEW-Config) from [@rcpacini](https://github.com/rcpacini).
+> **Open Source Statement**: This library contains and utilizes a copy of [LabVIEW-Config](https://github.com/rcpacini/LabVIEW-Config) developed by [@rcpacini](https://github.com/rcpacini).
 
 > [!NOTE]
-> Default configuration file location:
+> **Default Configuration File Location**:
 >
-> - In development, the first ini configuration file under the Application Directory, with the default name csm-app.ini if no configuration file exists.
-> - After compilation, the exe directory contains an ini configuration file with the same name as the exe. (LabVIEW will inevitably generate such a configuration file after compilation)
+> - During development: The first INI configuration file found in the Application Directory. If no configuration file exists, it defaults to `csm-app.ini`.
+> - After compilation: An INI configuration file with the same name as the executable will be present in the EXE directory (LabVIEW automatically generates this file upon compilation).
 
 > [!NOTE]
-> Scenarios with multiple configuration files:
+> **Multi-File Configuration Scenarios**:
 >
-> - When loading, the later loaded configuration file will override the same configuration items in the previously loaded configuration file.
-> - When saving the cache to a file, changes will be saved to the later loaded configuration file.
+> - When loading multiple files, later files will override identical configuration items from previously loaded files.
+> - When saving cached changes to files, modifications will be saved to the most recently loaded configuration file.
 
 > [!WARNING]
-> Note that because this library uses a global cache modification flag, frequent configuration changes will cause the cache mechanism at the read VI to fail. Therefore, this library is not suitable for scenarios where configuration information is frequently modified.
+> Due to the library's use of a global cache modification flag, frequent configuration changes will diminish the effectiveness of the caching mechanism in read VIs. Consequently, this library is not recommended for scenarios requiring frequent configuration modifications.
 
 ## Application Scenarios
 
-### Used as parameters parsed by CSM
+### CSM-Resolvable Parameters
 
-Provides `${section.variable:defaultValue}` support for CSM, which can be used directly in text messages sent by CSM.
+Enables `${section.variable:defaultValue}` syntax support in CSM, allowing direct use within text messages sent by CSM.
 
 > [!TIP]
 >
-> - The section can be omitted. By default, the configuration section is SectionName=LabVIEW.
-> - The default value can be omitted, with the default being "".
+> - The section parameter is optional. When omitted, the default configuration section `SectionName=LabVIEW` is used.
+> - Default values are also optional, with an empty string ("") serving as the default when no value is specified.
 
 ![Example](.github/1.png)
 
-### Load the corresponding configuration by providing the prototype
+### Prototype-Based Configuration Loading
 
-Load the corresponding configuration by providing the prototype. You can load from the section or key.
+Load configurations by providing a prototype structure. You can load configurations either from an entire section or a specific key.
 
 ![Example](.github/2.png)
 
-### Fixed CSM API parameters
+### Fixed CSM API Parameters
 
-Provides the function of fixing CSM API parameters. In this scenario, the priority of CSM API parameters is: CSM API parameters > configuration file parameters > default constant parameters. For example, it is easy to fix the parameters of serial port initialization in the configuration file.
+Provides functionality to fix CSM API parameters with a defined priority hierarchy: CSM API parameters > configuration file parameters > default constant parameters. For instance, this makes it easy to fix serial port initialization parameters in a configuration file.
 
-- When initialized, if parameters are sent, the sent parameters will be used.
-- If no parameters are sent, the parameters in the configuration file will be used.
-- If there are no parameters in the configuration file, the default constant parameters will be used.
-- Parameters can be partially provided, with missing parameters using the configuration information of the next priority.
+- When initializing, explicitly sent parameters take precedence.
+- If no parameters are sent, configuration file parameters are used.
+- In the absence of configuration file parameters, default constant parameters are applied.
+- Parameters can be partially specified, with missing values automatically filled using the next priority level.
 
 ![Example](.github/3.png)
 
-### Multi-file configuration system
+### Multi-File Configuration System
 
-Implement a distributed configuration file system through the multi-file configuration system.
+Implement a distributed configuration file system using the multi-file configuration capabilities.
 
 ![Example](.github/4.png)
 
 ### Referencing Configuration Files with [__include]
 
-The `[__include]` section allows you to reference other configuration files, enabling modular and reusable configuration setups. Included files are loaded in advance, similar to the multi-file scenario.
+The `[__include]` section enables referencing other configuration files, facilitating modular and reusable configuration setups. Included files are preloaded, following the same behavior as multi-file scenarios.
 
 > [!TIP]
 >
-> - Be aware that referencing files can lead to circular dependencies, causing infinite loops. The library maintains a list of loaded configuration files and will skip loading a file if it detects it has already been loaded.
+> - Exercise caution to avoid circular dependencies, which can cause infinite loops. The library maintains a record of loaded configuration files and will skip reloading files that have already been loaded.
 
 ![image](.github/6.png)
 
-### Nested Variable
+### Nested Variables
 
-CSM INI-Static-Variable-Support supports parsing nested variables, allowing you to reference other keys within a key for more flexible configuration. The format is `${section.variable:defaultValue}`.
+CSM INI-Static-Variable-Support includes support for nested variable parsing, allowing references to other keys within a key for more flexible configuration. The format follows `${section.variable:defaultValue}`.
 
-1. **Read API:** `CSM INI Read String.vi` reads the original configuration value without parsing nested variables. All other read APIs will automatically resolve nested variables.
-2. **Write API:** All write APIs overwrite the configuration value. In general, keys containing nested references are not directly modified by write operations.
+1. **Read API Behavior**: `CSM INI Read String.vi` retrieves the original configuration value without parsing nested variables. All other read APIs automatically resolve nested variables.
+2. **Write API Behavior**: All write APIs overwrite configuration values directly. In general, keys containing nested references should not be directly modified through write operations.
 
-``` ini
+```ini
 // default configuration
 [network]
 host = ${protocol}://${ip}:${port}
@@ -128,12 +128,12 @@ root = d:/data
 path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms
 ```
 
-For example, with the above configuration file:
+Using the configuration above:
 
-**Scenario 1:** Reading the value of `${file.path}` will return an actual file path dynamically assembled from other configuration items, allowing for flexible path definitions.
+**Scenario 1**: Reading `${file.path}` returns an actual file path dynamically assembled from other configuration items, enabling flexible path definitions.
 
-**Scenario 2:** The `[case1]` and `[case2]` sections define two different sets of related configuration information. By modifying the value of `${RT.select}`, you can easily switch between multiple configurations when accessing `${RT.select}`.
+**Scenario 2**: The `[case1]` and `[case2]` sections define two distinct sets of related configuration information. By modifying `${RT.select}`, you can easily switch between these configurations when accessing `${RT.addr}`.
 
-Refer to the sample project for more detailed usage information.
+For more detailed usage examples, refer to the sample project.
 
 ![image](.github/7.png)

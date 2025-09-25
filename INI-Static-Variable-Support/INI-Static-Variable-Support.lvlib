@@ -12,12 +12,18 @@
 			<Item Name="_CSM - Read File Logger Configuration - v1.0.vi" Type="VI" URL="../_Support/instances/_CSM - Read File Logger Configuration - v1.0.vi"/>
 			<Item Name="_CSM - Read Log Filter Rules - v1.0.vi" Type="VI" URL="../_Support/instances/_CSM - Read Log Filter Rules - v1.0.vi"/>
 		</Item>
+		<Item Name="FGV" Type="Folder">
+			<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
+			<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
+			<Item Name="INI-FGV(lvlibp).vi" Type="VI" URL="../_Support/INI-FGV(lvlibp).vi"/>
+		</Item>
+		<Item Name="FlagInstance" Type="Folder">
+			<Item Name="FlagInstance-CSMINIVariable.vi" Type="VI" URL="../_Support/FlagInstance-CSMINIVariable.vi"/>
+			<Item Name="FlagInstance-Update CSMINIVariable.vi" Type="VI" URL="../_Support/FlagInstance-Update CSMINIVariable.vi"/>
+		</Item>
 		<Item Name="CSM-Static-Variable-Manager.lvclass" Type="LVClass" URL="../_Support/CSMSVMgr/CSM-Static-Variable-Manager.lvclass"/>
 		<Item Name="Default Ini Config File.vi" Type="VI" URL="../_Support/Default Ini Config File.vi"/>
-		<Item Name="global-csm-ini-db-change-flag.vi" Type="VI" URL="../_Support/global-csm-ini-db-change-flag.vi"/>
-		<Item Name="INI-FGV.vi" Type="VI" URL="../_Support/INI-FGV.vi"/>
 		<Item Name="_Def-Ini-Variable.ctl" Type="VI" URL="../_Support/_Def-Ini-Variable.ctl"/>
-		<Item Name="_fgv-oper.ctl" Type="VI" URL="../_Support/_fgv-oper.ctl"/>
 		<Item Name="INI Session.vi" Type="VI" URL="../_Support/INI Session.vi"/>
 		<Item Name="Parse Used Session and Name.vi" Type="VI" URL="../_Support/Parse Used Session and Name.vi"/>
 		<Item Name="Is HexStr Content.vi" Type="VI" URL="../_Support/Is HexStr Content.vi"/>

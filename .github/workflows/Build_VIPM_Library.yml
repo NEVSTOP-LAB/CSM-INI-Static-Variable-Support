@@ -9,10 +9,25 @@ on:
     branches:
       - main
     types: [closed]
+    paths-ignore:
+      - '**.md'
+      - '**.txt'
+      - '**.drawio'
+      - '**.png'
+      - '**.svg'
+      - '**.json'
+      - '**.yml'
+      - 'testcases/**'
 
   push:
     paths-ignore:
       - '**.md'
+      - '**.txt'
+      - '**.drawio'
+      - '**.png'
+      - '**.svg'
+      - '**.json'
+      - '**.yml'
       - 'testcases/**'
 
   # Allows you to run this workflow manually from the Actions tab
