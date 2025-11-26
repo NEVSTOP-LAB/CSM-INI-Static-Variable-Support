@@ -82,3 +82,32 @@ CSM INI-Variable Support 为 CSM 提供简单易用的配置文件支持功能�
 - step5: 假设传递过来的参数为空"", 相当于没有提供参数; 同时ini配置文件中也没有定义对应的配置，此时采用默认常量参数。
     - step5.1: Convert API String to Cluster(Default in Session).vim 转换，"non-existing module" section 不存在，使用提供的参考数据. 结果为 ip:127.0.0.1;port:80.
     - step5.2: Convert API String to Cluster(Default in Session).vim 转换，从给定的section/key载入配置, 但是 section/key都不存在。使用提供的参考数据. 结果为 ip:127.0.0.1;port:80.
+
+## 多文件配置系统(4. Multi-file configuration system.vi)
+
+### overview
+
+本范例展示 CSM INI-Variable 对于多文件配置的支持。
+
+### Introduction
+
+本范例展示 CSM INI-Variable 对于多文件配置的支持。利用多文件配置功能，可实现分布式配置文件系统。
+
+CSM INI-Variable Support 具有一个默认的配置文件，无需显示加载，会在程序实例启动时后台自动载入。
+    - 开发状态：Application Directory 中找到的第一个 INI 配置文件。若不存在配置文件，则默认为 csm-app.ini。
+    - 编译后：可执行文件所在目录中与可执行文件同名的 INI 配置文件（LabVIEW 编译后会自动生成此文件）。
+
+加载多个文件时，后加载的文件会覆盖先前加载文件中的相同配置项。将缓存更改保存到文件时，修改会保存到最后加载的配置文件中。
+
+### steps
+
+- step1: 生成一个临时的INI文件，使用 CSM - Load Configuration Variables From File.vi 加载该文件。
+- step2: 再生成一个临时的INI文件，使用 CSM - Load Configuration Variables From File.vi 加载该文件，需要注意的是，RS232_Device section中的 resource key 会被覆盖。
+- step3: 应用场景展示
+    - step3.1: 使用 CSM - Read Cluster Elements From Session.vim, 读取 Cluster 配置。
+    - step3.2: 再参数固化中使用，可以看出，无需发送串口的信息，"SerialPort Initialize" 中会使用配置文件中的信息初始化串口
+    - step3.3: step3.2中如果发送了串口信息，以发送的信息为准，"SerialPort Initialize" 中会使用发送的信息初始化串口。
+
+
+
+
