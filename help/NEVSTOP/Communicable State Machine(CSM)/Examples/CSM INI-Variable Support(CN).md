@@ -196,3 +196,22 @@ path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms
 - step5: 展示使用不同字段信息拼接产品路径的场景，例如定义了 file.path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms
     - step5.1 通过修改 info.date 和 info.time, 可以发现 file.path 实际解析的路径会根据配置信息动态变化
 
+## 修改配置信息（7. Write and Read Configuration.vi）
+
+### overview
+
+本范例展示 CSM INI-Static-Variable-Support 修改配置信息。
+
+### Introduction
+
+CSM INI-Static-Variable-Support 提供了修改配置信息的 API。您可以使用这些 API 来动态更新配置文件中的键值对。请注意，由于CSM INI-Variable Support 为了提高效率，在读取函数处均使用全局缓存修改标志，当整体配置没有发生变化时,会快速的使用缓存的数据，提高读取效率。频繁的配置更改会降低读取 VI 中缓存机制的有效性。因此，本库不建议用于需要频繁修改配置的场景。
+
+可以使用 CSM - Write Configuration Variable.vi 和 CSM - Write INI String.vi 来修改配置信息。
+
+需要注意的是：
+- 默认内存中修改的配置，不会自动同步到配置文件中，需要调用 CSM - Sync Configuration Variables to File.vi 来同步到配置文件中。
+- 原始配置文件定义某些配置项，才可以在同步保存到配置文件时保留下来。如果原始配置文件没有定义某些配置项，修改的变量默认只会保存在内存中，不会同步到配置文件中。
+- 可以调用 CSM - Mark All Temp Variables as Permanent.vi 将所有临时变量标记为永久变量，这样在同步保存到配置文件时，所有变量都会被保留下来。
+
+
+
