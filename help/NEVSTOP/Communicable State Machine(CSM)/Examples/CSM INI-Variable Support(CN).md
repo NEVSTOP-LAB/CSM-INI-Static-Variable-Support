@@ -1,6 +1,6 @@
 # CSM INI-Variable Support
 
-## 1. Used as parameters parsed by CSM.vi
+## CSM 可解析参数(1. Used as parameters parsed by CSM.vi)
 
 ### Overview
 
@@ -29,3 +29,27 @@ CSM INI-Variable Support 为 CSM 提供简单易用的配置文件支持功能�
     - step2.2: step2.1 部分代码运行的期望结果
     - step2.3: 这部分的代码中，注意 并不只是参数可以使用CSM-INI-Variable Support，任意字段都可以使用。
     - step2.4: step2.3 部分代码运行的期望结果
+
+## (2. Load the corresponding configuration by providing the prototype.vi)
+
+### Overview
+
+本范例展示通过提供Cluster prototype 加载配置。您可以从整个节或特定键加载配置。
+
+### Introduction
+
+可以提供一个Cluster prototype 来加载配置。
+
+支持这个功能的函数为：
+ - CSM - Read Cluster Elements From Session.vim：Cluster prototype 中的元素名称会被作为配置文件中的变量名。
+ - CSM - Read Cluster Elements From Key.vim：需要提供Key 参数，cluster 使用API String 格式存储在给定的section/key 中。
+
+特殊情况说明：
+- 如果配置文件中未定义该变量，将使用提供原型的Cluster的元素数据。
+
+### Steps
+
+- step1: 生成一个临时的INI文件，使用 CSM - Load Configuration Variables From File.vi 加载该文件。
+- step2: 使用 CSM - Read Cluster Elements From Session.vim 加载配置。
+- step3: 使用 CSM - Populate Configuration Variables.vi 将字符串中的变量解析为实际值。
+
