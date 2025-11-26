@@ -108,6 +108,28 @@ CSM INI-Variable Support 具有一个默认的配置文件，无需显示加载�
     - step3.2: 再参数固化中使用，可以看出，无需发送串口的信息，"SerialPort Initialize" 中会使用配置文件中的信息初始化串口
     - step3.3: step3.2中如果发送了串口信息，以发送的信息为准，"SerialPort Initialize" 中会使用发送的信息初始化串口。
 
+## 使用 [__include] 引用配置文件(5. import Config.ini with __include section.vi)
+
+### Overview
+
+本范例展示 CSM INI-Variable 对于引用配置文件的支持。利用引用配置文件功能，可实现分布式配置文件系统。
+
+### Introduction
+
+CSM INI-Variable Support 载入的配置文件中，若包含 [__include] 段落，会自动引用指定的配置文件。需要注意的是：
+
+- 如果是相对路径，会相对于当前配置文件的路径进行解析；如果是绝对路径，会直接使用该路径。
+- 请注意避免循环依赖，否则可能导致无限循环。CSM INI-Variable Support 会维护已加载配置文件的记录，当第二次尝试加载同一文件时，将跳过该次加载操作。
+- [__include] 中的key名称不重要，只作为一个标识, value中的路径才是重要的。
+- [__include] 中的配置信息会先被载入，类似多文件加载时先加载，因此当前配置文件中的配置项会覆盖引用文件中的相同配置项。
+
+### steps
+
+- step1: 创建多个配置文件，注意内部引用关系。另外注意 [__include] 大消息不敏感。
+- step2: 使用 CSM - Load Configuration Variables From File.vi 加载该文件
+- step3: 可以使用 CSM - Configuration File Path.vi 获取当前加载的所有配置文件路径。
+- step4: 尝试读取配置信息，请注意覆盖关系后，实际生效的配置。
+
 
 
 
