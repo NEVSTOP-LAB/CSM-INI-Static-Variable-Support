@@ -130,6 +130,69 @@ CSM INI-Variable Support 载入的配置文件中，若包含 [__include] 段落
 - step3: 可以使用 CSM - Configuration File Path.vi 获取当前加载的所有配置文件路径。
 - step4: 尝试读取配置信息，请注意覆盖关系后，实际生效的配置。
 
+## 嵌套变量(6. Read Nested Variables.vi)
 
+### Overview
 
+CSM INI-Static-Variable-Support 支持嵌套变量解析，允许在键中引用其他键，实现更灵活的配置定义。格式遵循 ${section.variable:defaultValue}。本范例展示了如何在配置文件中定义和引用嵌套变量。
+
+### Introduction
+
+CSM INI-Static-Variable-Support 支持嵌套变量解析，允许在键中引用其他键，实现更灵活的配置定义。格式遵循 ${section.variable:defaultValue}。
+
+- 读取 API 行为：CSM INI Read String.vi 获取原始配置值而不解析嵌套变量。其他所有读取 API 都会自动解析嵌套变量。
+- 写入 API 行为：所有写入 API 都会直接覆盖配置值。通常情况下，包含嵌套引用的键不应通过写入操作直接修改。
+
+举例：
+
+```
+// 默认配置
+[network]
+host = ${protocol}://${ip}:${port}
+protocol = http
+ip = "192.168.0.1"
+port = 8080
+url = ${host}/API/v1/Get
+
+[case1]
+addr = "${network.host}/API/v1/case1/Get"
+
+[case2]
+network.host = 127.0.0.1
+addr = "${network.host}/API/v2/case2/Get"
+
+[RT]
+select = 1
+addr = ${case${select}.addr}
+
+[info]
+operator = mary
+date = #fill by user
+time =  #fill by user
+test = board
+
+[file]
+root = d:/data
+path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms
+```
+
+使用上面的配置文件示例：
+
+场景1：读取 ${file.path} 会返回一个由其他配置项动态组合而成的实际文件路径，从而实现灵活的路径定义。
+场景2：[case1] 和 [case2] 节定义了两组不同的相关配置信息。通过修改 ${RT.select}，您可以切换访问 ${RT.addr} 的结果。
+
+### steps
+
+- step1: 生成一个临时的INI文件，使用 CSM - Load Configuration Variables From File.vi 加载该文件。
+- step2: 嵌套变量中引用同一个section的配置
+    - step2.1 CSM - Read INI String 加载的是原始配置，不会解析嵌套变量
+    - step2.2 CSM - Read Configuration Variable.vim 会解析嵌套变量
+    - step2.3 CSM - Populate Configuration Variables.vi  会解析嵌套变量
+- step3: 嵌套变量中引用的其他section的配置, 当指明section时，使用指定的section,否则优先使用当前section的配置
+- step4: 展示嵌套变量中变量名也可以引用的情况，例如：${case${select}.addr}
+    - step4.1 修改 ${RT.select} 为 2
+    - step4.2 读取 ${RT.addr} 会返回 ${case2.addr}
+    - step4.3 (optional) 手动修改 修改 ${RT.select} 为 1, 再次运行，查看配置信息的变化
+- step5: 展示使用不同字段信息拼接产品路径的场景，例如定义了 file.path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms
+    - step5.1 通过修改 info.date 和 info.time, 可以发现 file.path 实际解析的路径会根据配置信息动态变化
 
