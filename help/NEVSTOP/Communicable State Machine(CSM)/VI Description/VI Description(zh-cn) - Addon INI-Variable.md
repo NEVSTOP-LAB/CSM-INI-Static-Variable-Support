@@ -133,10 +133,18 @@
 
 ## Convert API String to Cluster(Default in Session).vim
 
-将 API 字符串转换为簇（默认从会话中读取）。
+将 API String 字符串转换为簇, 数据保存在指定的节(section)中, 簇中的元素名称对应节(section)中的键(key)。具有明确的优先级层次：CSM API 参数 > 配置文件参数 > 默认常量参数。例如，这使得将串口初始化参数固定在配置文件中变得非常简单。
+
+- 初始化时，显式发送的参数具有最高优先级。
+- 若未发送参数，则使用配置文件中的参数。
+- 在没有配置文件参数的情况下，应用默认常量参数。
+
+应用场景：用于将 CSM 的参数固化到配置文件中。
+
+参考范例：3. In CSM API parameters.vi
 
 -- <b>输入控件 (Controls)</b> --
-- <b>API String</b>: API 字符串。
+- <b>API String</b>: API String 字符串。
 - <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
 - <b>Type</b>: 数据类型。
 
@@ -146,10 +154,18 @@
 
 ## Convert API String to Cluster(Default in Key).vim
 
-将 API 字符串转换为簇（默认从键中读取）。
+将 API String 字符串转换为簇, 数据保存在指定的节(section)中的指定键(key)。具有明确的优先级层次：CSM API 参数 > 配置文件参数 > 默认常量参数。例如，这使得将串口初始化参数固定在配置文件中变得非常简单。
+
+- 初始化时，显式发送的参数具有最高优先级。
+- 若未发送参数，则使用配置文件中的参数。
+- 在没有配置文件参数的情况下，应用默认常量参数。
+
+应用场景：用于将 CSM 的参数固化到配置文件中。
+
+参考范例：3. In CSM API parameters.vi
 
 -- <b>输入控件 (Controls)</b> --
-- <b>API String</b>: API 字符串。
+- <b>API String</b>: API String 字符串。
 - <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
 - <b>Type</b>: 数据类型。
 - <b>Variable Name</b>: 变量名称。
@@ -315,37 +331,19 @@
 
 > Ref: CSM INI-Variable 配置文件路径
 
-## CSM - Read Log Filter Rules from INI Strings.vi
+## Utility
 
-从 INI 字符串中读取日志过滤规则。
+### CSM - Read Log Filter Rules from INI Strings.vi
 
-## CSM - Read File Logger Configuration from INI String.vi
+从配置中读取日志过滤规则. 此配置主要配合以下几个VI使用：
 
-从 INI 字符串中读取文件记录器配置。
+- CSM - Set Log Filter Rules.vi
+- addons\Logger\CSM - Start File Logger.vi
 
+### CSM - Read File Logger Configuration from INI String.vi
 
-## Read CSM Log Filter Rules.vi
+从配置中读取日志记录配置。 此配置主要配合以下几个VI使用：
 
-读取 CSM 日志过滤规则。
+- addons\Logger\CSM - Start File Logger.vi
 
-
-## CSM - Read File Logger Configuration - v1.0.vi
-
-读取文件记录器配置（v1.0）。
-
--- <b>输入控件 (Controls)</b> --
-- <b>Section Name("FileLogger")</b>: 节名，默认为 "FileLogger"。
-
--- <b>输出控件 (Indicators)</b> --
-- <b>FileLogger Configuration-v1</b>: 文件记录器配置。
-
-## CSM - Read Log Filter Rules - v1.0.vi
-
-读取日志过滤规则（v1.0）。
-
--- <b>输入控件 (Controls)</b> --
-- <b>Section Name("LogFilterRules")</b>: 节名，默认为 "LogFilterRules"。
-
--- <b>输出控件 (Indicators)</b> --
-- <b>Rules-v1</b>: 日志过滤规则。
 
