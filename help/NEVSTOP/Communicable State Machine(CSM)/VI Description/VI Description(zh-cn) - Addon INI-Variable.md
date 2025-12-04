@@ -1,340 +1,351 @@
 # CSM INI-Variable Addon
 
-## 概述
+> [!NOTE] CSM INI-Variable Addon
+>
+> 配置文件是应用程序开发中不可或缺的组成部分。CSM INI-Variable Addon 为 CSM 提供简单易用的配置文件支持功能，使用户能够配置应用程序而无需显式读写配置文件。
+>
+> CSM INI-Variable 配置文件数据的格式，使用 CSM API String 格式。
+>
+> 主要特点包括：
+> 1. **默认配置处理**：首次调用库函数时自动加载默认配置文件，无需用户显式加载。
+> 2. **多文件支持**：通过专用函数支持加载多个配置文件。
+> 3. **内存缓存**：在内存中维护一个缓存副本，应用程序从该缓存中获取配置信息。
+> 4. **INI 格式兼容**：配置文件和内存副本均采用标准 INI 格式，支持节和键值对。
+> 5. **高效缓存机制**：使用全局修改标记优化性能，仅在配置发生修改时才重新读取内存副本。
+> 
+> 本库包含并使用了由 [@rcpacini](https://github.com/rcpacini) 开发的 [LabVIEW-Config](https://github.com/rcpacini/LabVIEW-Config) 的副本。
 
-> [!NOTE] CSM Massdata 参数支持
-> CSM Massdata 参数支持提供了一种高效的参数传递机制，用于在 CSM 中传递大量数据。通过使用内存高效的引用机制而非直接传输数据，从而提高了参数传递的效率和性能。
-> - CSM Massdata 定义的参数类型为 `<MassData>`，可以通过 `## CSM - Argument Type.vi` 获取。
-> - CSM Massdata 数据传输是完全无损的，但不适合存储需要无限期持久化的数据。
-> - 注意：Massdata Support 内部使用循环缓冲区机制，同一应用程序内的所有 CSM 模块共享相同的 Massdata 缓冲区空间。当缓冲区满时，新数据将从开始位置覆盖旧数据。因此需要设置合理的缓冲区大小，确保数据在使用完毕前未被覆盖，避免数据丢失。
 
-> [!NOTE] CSM Massdata 参数格式
-> 典型的 massdata 数据格式为: `<MassData>Start:8057;Size:4004;DataType:1D I32`。其中：
-> - `Start`: 数据在内存中的起始地址
-> - `Size`: 数据的大小（字节数）
-> - `DataType(optional)`: 数据的类型，由 `CSM Data Type String.vi` 定义
+> [!NOTE] CSM INI-Variable 变量格式
+>
+> 格式定义: ${section.variable:defaultValue}>
+> - `${}`: 变量引用语法。
+> - `section`（可选）: 配置文件中的节名。
+> - `variable`: 配置文件中的变量名。
+> - `defaultValue`（可选）: 默认值，当变量不存在时使用。
+>
+> 说明：
+> - 支持嵌套的变量引用，例如 `${section1.variable1:${section2.variable2:defaultValue2}}`。
+> - section 参数为可选。省略时，使用默认配置段 `SectionName=LabVIEW`。
+> - 默认值为可选，未指定时默认为空字符串（""）。
 
-## CSM - Configuration File Path.vi
 
-- <b>All Config Files</b>:Indicators
-- <b>Default Config File Path</b>:Indicators
-- <b>Include All Paths?(F)</b>:Controls
+> [!NOTE] CSM INI-Variable 配置文件路径
+>
+> - 开发状态：Application Directory 中找到的第一个 INI 配置文件。若不存在配置文件，则默认为 `csm-app.ini`。
+> - 编译后：可执行文件所在目录中与可执行文件同名的 INI 配置文件（LabVIEW 编译后会自动生成此文件）。
+> - 支持载入多个配置文件，后加载的文件会覆盖先前加载文件中的相同配置项。
+> - 配置文件中可以使用 `[__include]` 节引用其他配置文件
+>   - 可以使用相对路径，也可以使用绝对路径。
+>   - 使用相对路径时，相对于当前配置文件的路径。
+>   - [__include] 节中的配置文件名称不重要，只需要确保路径正确即可。
+>   - 为了避免循环引用，同一个配置文件，第二次加载时会自动忽略。
 
-## CSM - Load Configuration Variables From File.vi
 
-- <b>Path</b>:Controls
-- <b>section postfix("")</b>:Controls
+> [!NOTE] CSM INI-Variable 多文件配置场景
+>
+> - 加载多个文件时，后加载的文件会覆盖先前加载文件中的相同配置项。
+> - 将缓存更改保存到文件时，修改会保存到最后加载的配置文件中。
 
-## CSM - Mark All Temp Variables as Permanent.vi
 
-- <b>Path("" to use default ini)</b>:Controls
+> [!WARNING] CSM INI-Variable 缓存机制警告
+> 请注意，由于本库使用全局缓存修改标志，频繁的配置更改会降低读取 VI 中缓存机制的有效性。因此，本库不建议用于需要频繁修改配置的场景。
 
 ## CSM - Populate Configuration Variables.vi
 
-- <b>Section Name("" as Default)</b>:Controls
-- <b>String in</b>:Controls
-- <b>String out</b>:Indicators
+在字符串中填充配置变量.
 
-## CSM - Read All Variable Names.vi
+应用场景：在CSM的脚本中直接使用INI-Variable变量，或充当CSM消息的参数。
 
-- <b>Array</b>:Indicators
-- <b>Permanent Variables Only?</b>:Controls
+参考范例：1. Used as parameters parsed by CSM.vi
 
-## CSM - Read Cluster Elements From Key.vim
+> Ref: CSM INI-Variable Addon
+> Ref: CSM INI-Variable 变量格式
+> Ref: CSM INI-Variable 配置文件路径
 
-- <b>Cluster out</b>:Indicators
-- <b>Cluster</b>:Controls
-- <b>Key Found?</b>:Indicators
-- <b>Key</b>:Controls
-- <b>Section Name("" as Default)</b>:Controls
+-- <b>输入控件 (Controls)</b> --
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
+- <b>String with INI-Variable</b>: 包含变量引用的输入字符串。
 
-## CSM - Read Cluster Elements From Session.vim
-
-- <b>Cluster out</b>:Indicators
-- <b>Cluster</b>:Controls
-- <b>Section Name("" as Default)</b>:Controls
+-- <b>输出控件 (Indicators)</b> --
+- <b>String</b>: 填充变量后的输出字符串。
 
 ## CSM - Read Configuration Variable.vim
 
-- <b>Section Name("" as Default)</b>:Controls
-- <b>Write If not found?(F)</b>:Controls
-- <b>config out</b>:Indicators
-- <b>config prototype(Cluster Prefered)</b>:Controls
+根据原型，读取配置中的变量值。
 
-## CSM - Read File Logger Configuration from INI String.vi
+- 推荐使用簇作为配置原型，族中的元素名称对应INI配置文件中的变量名。
+- 如果是其他数据类型，对应的变量名称为"Config"。
+- 如果原型对应的变量在配置中不存在，则根据 Write If not found? 参数确定是否写入默认值。
 
+应用场景: 直接将INI配置文件中的配置读取成LabVIEW数据。
 
+参考范例：2. Load the corresponding configuration by providing the prototype.vi
 
-## CSM - Read INI String.vi
+> Ref: CSM INI-Variable 配置文件路径
 
-- <b>>> Default Value >></b>:Controls
-- <b>Key Found?</b>:Indicators
-- <b>Section Name("" as Default)</b>:Controls
-- <b>String in</b>:Controls
-- <b>String out</b>:Indicators
-- <b>Write If not found?(F)</b>:Controls
+-- <b>输入控件 (Controls)</b> --
+- <b>Configuration Prototype (Cluster Prefered)</b>: 配置原型（推荐使用簇）。
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
+- <b>Write If not found? (F)</b>: 如果未找到，是否写入默认值。
 
-## CSM - Read Key Names.vi
+-- <b>输出控件 (Indicators)</b> --
+- <b>Configuration</b>: 输出配置值。
 
-- <b>Array</b>:Indicators
-- <b>Key Found?</b>:Indicators
-- <b>Section Name("" as Default)</b>:Controls
+## CSM - Read Cluster Elements From Session.vim
 
-## CSM - Read Log Filter Rules from INI Strings.vi
+读取配置中的簇数据，数据保存在指定的节(section)中, 簇中的元素名称对应节(section)中的键(key)。
 
+- 如果指定的节(section)不存在，则创建使用默认节。
+- 如果簇中的元素对应的键(key)不存在，则使用输入原型中的值作为默认值
 
+应用场景: 直接将INI配置文件中的配置读取成LabVIEW数据。
 
-## CSM - Read Sessions.vi
+参考范例：2. Load the corresponding configuration by providing the prototype.vi
 
-- <b>Array</b>:Indicators
-- <b>Key Found?</b>:Indicators
+> Ref: CSM INI-Variable 配置文件路径
 
-## CSM - Reset to Default.vi
+-- <b>输入控件 (Controls)</b> --
+- <b>Cluster</b>: 簇原型。
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
 
+-- <b>输出控件 (Indicators)</b> --
+- <b>Cluster out</b>: 输出簇。
 
+## CSM - Read Cluster Elements From Key.vim
 
-## CSM - Restore Variable Value.vi
+读取配置中的簇数据，数据保存在指定的节(section)中的指定键(key),数据以API String格式保存。
 
+应用场景: 直接将INI配置文件中的配置读取成LabVIEW数据。
 
+参考范例：2. Load the corresponding configuration by providing the prototype.vi
 
-## CSM - Sync Configuration Variables to File.vi
+> Ref: CSM INI-Variable 配置文件路径
 
-- <b>All Temp Variable to Default Ini(F)</b>:Controls
-- <b>Write UnSupported Datatype?(F)</b>:Controls
+-- <b>输入控件 (Controls)</b> --
+- <b>Cluster</b>: 簇原型。
+- <b>Key</b>: 键名。
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
 
-## CSM - Unload Configuration Variable File.vi
-
-- <b>Path</b>:Controls
-
-## CSM - Write Configuration Variable.vim
-
-- <b>Section Name("" as Default)</b>:Controls
-- <b>Variant (dup)</b>:Indicators
-- <b>Variant</b>:Controls
-
-## CSM - Write INI String.vi
-
-- <b>>> Variable Name >></b>:Controls
-- <b>Key Replace?</b>:Indicators
-- <b>Section Name("" as Default)</b>:Controls
-- <b>String</b>:Controls
-
-## Convert API String to Cluster(Default in Key).vim
-
-- <b>API String</b>:Controls
-- <b>Data</b>:Indicators
-- <b>Section Name("" as Default)</b>:Controls
-- <b>Type</b>:Controls
-- <b>Variable Name</b>:Controls
-- <b>error</b>:Indicators
+-- <b>输出控件 (Indicators)</b> --
+- <b>Cluster out</b>: 输出簇。
+- <b>Key Found?</b>: 键是否存在。
 
 ## Convert API String to Cluster(Default in Session).vim
 
-- <b>API String</b>:Controls
-- <b>Data</b>:Indicators
-- <b>Section Name("" as Default)</b>:Controls
-- <b>Type</b>:Controls
-- <b>error</b>:Indicators
+将 API 字符串转换为簇（默认从会话中读取）。
 
-## Default Ini Config File.vi
+-- <b>输入控件 (Controls)</b> --
+- <b>API String</b>: API 字符串。
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
+- <b>Type</b>: 数据类型。
 
-- <b>appended path</b>:Indicators
+-- <b>输出控件 (Indicators)</b> --
+- <b>Data</b>: 转换后的数据。
+- <b>error</b>: 错误信息。
 
+## Convert API String to Cluster(Default in Key).vim
 
+将 API 字符串转换为簇（默认从键中读取）。
 
+-- <b>输入控件 (Controls)</b> --
+- <b>API String</b>: API 字符串。
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
+- <b>Type</b>: 数据类型。
+- <b>Variable Name</b>: 变量名称。
 
+-- <b>输出控件 (Indicators)</b> --
+- <b>Data</b>: 转换后的数据。
+- <b>error</b>: 错误信息。
 
+## CSM - Write Configuration Variable.vim
 
+写入配置变量。
 
-## Import Permanent Variable From File.vi
+- 推荐使用簇作为配置原型，族中的元素名称对应INI配置文件中的变量名。
+- 如果是其他数据类型，对应的变量名称为"Config"。
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>Path</b>:Controls
-- <b>section postfix</b>:Controls
+参考范例：7. Write and Read Configuration.vi
 
-Is HexStr Content.vi
+> Ref: CSM INI-Variable 配置文件路径
+> Ref: CSM INI-Variable 缓存机制警告
 
-- <b>Content</b>:Controls
-- <b>HexStr Content</b>:Indicators
-- <b>hexStr</b>:Indicators
+-- <b>输入控件 (Controls)</b> --
+- <b>Configuration</b>: 要写入的配置数据。
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
 
-Key Information From Index.vi
+-- <b>输出控件 (Indicators)</b> --
+- <b>Configuration (dup)</b>: 写入的配置数据副本。
 
-- <b>Config in</b>:Controls
-- <b>Config out</b>:Indicators
-- <b>Key Information</b>:Indicators
-- <b>Key Name</b>:Controls
-- <b>Section Name</b>:Controls
-- <b>Start</b>:Controls
+## 原始配置信息读取
 
-Key Information.vi
+### CSM - Read All Variable Names.vi
 
-- <b>Config in</b>:Controls
-- <b>Config out</b>:Indicators
-- <b>Key Information</b>:Indicators
-- <b>Key Name</b>:Controls
-- <b>Section Name</b>:Controls
+读取当前内存中所有变量名称。
 
-List Files.vi
+-- <b>输入控件 (Controls)</b> --
+- <b>Permanent Variables Only? (F)</b>: 是否仅读取永久变量。
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>File List</b>:Indicators
+-- <b>输出控件 (Indicators)</b> --
+- <b>All Variable Names</b>: 变量名称数组。
 
-List Keys.vi
+### CSM - Read Sections.vi
 
-- <b>Array</b>:Indicators
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>Key?</b>:Indicators
-- <b>Section Name</b>:Controls
+读取当前内存中所有节名称。
 
-List Permanent Variables.vi
+-- <b>输出控件 (Indicators)</b> --
+- <b>Sections</b>: 节名称数组。
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>Permanent Variables</b>:Indicators
+### CSM - Read Key Names.vi
 
-List Sessions.vi
+读取指定节中的所有键名。
 
-- <b>Array</b>:Indicators
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
+-- <b>输入控件 (Controls)</b> --
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
 
-List Variables.vi
+-- <b>输出控件 (Indicators)</b> --
+- <b>Keys</b>: 键名数组。
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>Variables</b>:Indicators
+### CSM - Read INI String.vi
 
-Mark All Temp Variables as Permanent.vi
+读取配置信息字符串。此读取为获取原始的字符串描述，不替换INI变量引用。
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>Path</b>:Controls
-- <b>SyncRef?(F)</b>:Controls
+应用场景：需要读取原始的配置信息，而不是替换内部变量引用后的配置信息。
 
-MultipleLines to String.vi
+参考范例：6. Read Nested Variables.vi
 
-- <b>Array</b>:Controls
-- <b>String</b>:Indicators
+-- <b>输入控件 (Controls)</b> --
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
+- <b>Key</b>: 包含变量引用的输入字符串。
+- <b>Default Value</b>: 默认值。
+- <b>Write If not found? (F)</b>: 如果未找到，是否写入默认值。
 
-New.vi
+-- <b>输出控件 (Indicators)</b> --
+- <b>Value</b>: 替换变量后的输出字符串。
+- <b>Key Found?</b>: 键是否存在。
 
-- <b>Config</b>:Indicators
-- <b>Path ("")</b>:Controls
-- <b>Text</b>:Controls
+### CSM - Write INI String.vi
 
-Open.vi
+写入配置信息字符串。
 
-- <b>Config</b>:Indicators
-- <b>Create if not exists? (T)</b>:Controls
-- <b>File Created?</b>:Indicators
-- <b>File Exists?</b>:Indicators
-- <b>Path</b>:Controls
+参考范例：6. Read Nested Variables.vi
 
-Parse Contained Variables.vi
+> Ref: CSM INI-Variable 缓存机制警告
 
-- <b>Contained Variables</b>:Indicators
-- <b>String</b>:Controls
+-- <b>输入控件 (Controls)</b> --
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
+- <b>Key</b>: 键名。
+- <b>Value</b>: 变量值字符串。
 
-Parse Token.vi
+-- <b>输出控件 (Indicators)</b> --
+- <b>Key Replace?</b>: 键是否被替换。
 
-- <b>Line</b>:Controls
-- <b>Name</b>:Indicators
-- <b>Token</b>:Controls
-- <b>Value</b>:Indicators
+## 多文件支持
 
-Parse Used Session and Name.vi
+### CSM - Configuration File Path.vi
 
-- <b>Section Name("" as Default)</b>:Controls
-- <b>name</b>:Controls
-- <b>used name</b>:Indicators
+返回加载的所有配置文件路径。
 
-Parse Value.vi
+参考范例：5. import Config.ini with __include section.vi
 
-- <b>Value (Comment Removed)</b>:Indicators
-- <b>Value (Quotes Removed)</b>:Indicators
-- <b>Value</b>:Controls
+> Ref: CSM INI-Variable 配置文件路径
 
-Populate String with INI Variable.vi
+-- <b>输入控件 (Controls)</b> --
+- <b>Include All Paths?(F)</b>: 是否包含所有配置文件路径。
 
-- <b>Section</b>:Controls
-- <b>String might with variables</b>:Controls
-- <b>String out</b>:Indicators
-- <b>depth</b>:Controls
-- <b>variable History</b>:Controls
+-- <b>输出控件 (Indicators)</b> --
+- <b>Default Config File Path</b>: 默认配置文件路径。
+- <b>All Config Files</b>: 所有配置文件列表。
 
+### CSM - Load Configuration Variables From File.vi
 
+从指定文件加载配置变量。如果节名后缀名不为空，载入的节名称会加上后缀。
 
+<b>Section Postfix ("")</b>主要用于载入多个配置文件，但具有相同节的情况。例如：两个配置文件：Hardware1.ini 和 Hardware2.ini，两个配置文件都有一个名为 "Serial" 的节, 并且内部的Keys 相同，表示串口配置，那么后载入的文件中的配置会覆盖先载入的文件中的配置。使用<b>Section Postfix ("")</b>来避免节名冲突。
 
-Read CSM Log Filter Rules.vi
+参考范例：5. import Config.ini with __include section.vi
 
+> Ref: CSM INI-Variable 配置文件路径
 
+-- <b>输入控件 (Controls)</b> --
+- <b>Configuration Path</b>: 配置文件路径。
+- <b>Section Postfix ("")</b>: 节名后缀。
 
-Read INI String.vi
+### CSM - Mark All Temp Variables as Permanent.vi
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>Content</b>:Indicators
-- <b>Default</b>:Controls
-- <b>Force Default Session?(F)</b>:Controls
-- <b>Key Found?</b>:Indicators
-- <b>Section Name</b>:Indicators
-- <b>Variable</b>:Controls
+将所有临时变量标记为永久变量，并将变量存储到指定的配置文件中。
 
+注意：虽然已经标记为永久变量，但是如果不使用 CSM - Sync Configuration Variables to File.vi, 依然不会将变量同步到文件中。
 
+> Ref: CSM INI-Variable 配置文件路径
 
+-- <b>输入控件 (Controls)</b> --
+- <b>Path ("" to Use Default File)</b>: 配置文件路径，空字符串表示使用默认 INI 文件。
 
+### CSM - Sync Configuration Variables to File.vi
 
-Restore Variable Value.vi
+将内存中的变量同步到指定的配置文件中。
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
+注意：只有永久变量才会同步到文件中，如果想将临时变量写入文件，需要提前将临时变量标记为永久变量。
 
-Session Information.vi
+> Ref: CSM INI-Variable 配置文件路径
 
-- <b>Config in</b>:Controls
-- <b>Config out</b>:Indicators
-- <b>Section Name</b>:Controls
-- <b>Session Information</b>:Indicators
+-- <b>输入控件 (Controls)</b> --
+- <b>All Temp Variable to Default Ini(F)</b>: 是否将所有临时变量同步到默认 INI 文件。
+- <b>Write UnSupported Datatype?(F)</b>: 是否写入不支持的数据类型。
 
-String Escape.vi
+### CSM - Unload Configuration Variable File.vi
 
-- <b>Escaped String</b>:Indicators
-- <b>Unescaped String</b>:Controls
+卸载配置变量文件。(@wenjia 补充行为)
 
-String Unescape.vi
+> Ref: CSM INI-Variable 配置文件路径
 
-- <b>Escaped String</b>:Controls
-- <b>Unescaped String</b>:Indicators
+-- <b>输入控件 (Controls)</b> --
+- <b>Path</b>: 配置文件路径。
 
-Sync to File.vi
+### CSM - Restore Variable Value.vi
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>Write Reference?(F)</b>:Controls
+恢复变量值, 将所有的永久变量刷新为首次载入的配置值，临时变量不会被修改。
 
+> Ref: CSM INI-Variable 配置文件路径
 
-Write INI String.vi
+### CSM - Reset to Default.vi
 
-- <b>CSM-Static-Variable-Manager in</b>:Controls
-- <b>CSM-Static-Variable-Manager out</b>:Indicators
-- <b>Content</b>:Controls
-- <b>Force Default Session?(F)</b>:Controls
-- <b>Key Replaced?</b>:Indicators
-- <b>Variable</b>:Controls
+将配置重置为默认值。所有的变量将被清空，所有的配置会从现在加载的配置文件中重新加载。
 
+> Ref: CSM INI-Variable 配置文件路径
+
+## CSM - Read Log Filter Rules from INI Strings.vi
+
+从 INI 字符串中读取日志过滤规则。
+
+## CSM - Read File Logger Configuration from INI String.vi
+
+从 INI 字符串中读取文件记录器配置。
+
+
+## Read CSM Log Filter Rules.vi
+
+读取 CSM 日志过滤规则。
 
 
 ## CSM - Read File Logger Configuration - v1.0.vi
 
-- <b>FileLogger Configuration-v1</b>:Indicators
-- <b>Section Name("FileLogger")</b>:Controls
+读取文件记录器配置（v1.0）。
 
-_## CSM - Read Log Filter Rules - v1.0.vi
+-- <b>输入控件 (Controls)</b> --
+- <b>Section Name("FileLogger")</b>: 节名，默认为 "FileLogger"。
 
-- <b>Rules-v1</b>:Indicators
-- <b>Section Name("LogFilterRules")</b>:Controls
+-- <b>输出控件 (Indicators)</b> --
+- <b>FileLogger Configuration-v1</b>: 文件记录器配置。
+
+## CSM - Read Log Filter Rules - v1.0.vi
+
+读取日志过滤规则（v1.0）。
+
+-- <b>输入控件 (Controls)</b> --
+- <b>Section Name("LogFilterRules")</b>: 节名，默认为 "LogFilterRules"。
+
+-- <b>输出控件 (Indicators)</b> --
+- <b>Rules-v1</b>: 日志过滤规则。
 
