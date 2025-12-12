@@ -15,7 +15,7 @@ CSM INI Variable Support为CSM提供简单易用的配置文件支持功能，�
 变量：${section.variable:defaultValue}
  - section：配置文件中的节名。section参数为可选。省略时，使用默认配置段SectionName=LabVIEW。
  - variable：配置文件中的变量名。
- - defaultValue：默认值，当配置文件中未定义该变量时使用。默认值为可选，未指定时默认为空字符串（""）。
+ - defaultValue：默认值，当配置文件中未定义该变量时使用。默认值为可选，未指定时默认为空字符串("")。
 
 ### Steps
 
@@ -68,8 +68,6 @@ CSM INI Variable Support为CSM提供简单易用的配置文件支持功能，�
 - 参数可以部分指定，缺失的值会自动使用下一优先级的配置信息填充。
 
 ### Steps
-
-<!-- 软件的步骤标注有误。-->
 
 - step1：生成一个临时的INI文件，使用`CSM - Load Configuration Variables From File.vi`加载该文件。
 - step2：使用一个普通的循环模拟一个CSM模块，模块的名称为“network”。
@@ -199,13 +197,13 @@ path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms
 - step4：展示嵌套变量中变量名也可以引用的情况，例如：`${case${select}.addr}`。
     - step4.1：修改$`{RT.select}`为 2。
     - step4.2：读取`${RT.addr}`会返回`${case2.addr}`。
-    - step4.3：（Optional）手动修改 修改`${RT.select}`为1, 再次运行，查看配置信息的变化。
+    - step4.3：(Optional)手动修改 修改`${RT.select}`为1, 再次运行，查看配置信息的变化。
 - step5：展示使用不同字段信息拼接产品路径的场景，例如定义了`file.path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms`。
     - step5.1：通过修改`info.date`和`info.time`, 可以发现`file.path`实际解析的路径会根据配置信息动态变化。
 
 
 
-## 修改配置信息（7. Write and Read Configuration.vi）
+## 修改配置信息(7. Write and Read Configuration.vi)
 
 ### overview
 

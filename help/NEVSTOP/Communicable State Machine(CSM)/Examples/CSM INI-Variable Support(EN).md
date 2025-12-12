@@ -79,8 +79,6 @@ Data sources may include: information sent via message parameters, parameters in
 
 ### Steps
 
-<!-- 软件的步骤标注有误。-->
-
 - Step1: Generate a temporary INI file and load it using `CSM - Load Configuration Variables From File.vi`.
 
 - Step2: Simulate a CSM module named "network" using a standard loop.
