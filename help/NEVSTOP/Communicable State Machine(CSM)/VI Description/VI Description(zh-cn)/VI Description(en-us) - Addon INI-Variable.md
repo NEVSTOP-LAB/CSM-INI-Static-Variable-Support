@@ -324,3 +324,11 @@ Reads log filter rules from the configuration. This configuration is primarily u
 Reads log recording configuration from the configuration. This configuration is primarily used with the following VI:
 
 - `addons\Logger\CSM - Start File Logger.vi`
+
+## Debugging Tools
+
+### CSM-INI Variable Viewer - DebugTool.vi
+
+CSM INI-Variable is a global configuration information. This tool is used to view and debug the current configuration information in memory.
+
+> - Ref: CSM INI-Variable Addon

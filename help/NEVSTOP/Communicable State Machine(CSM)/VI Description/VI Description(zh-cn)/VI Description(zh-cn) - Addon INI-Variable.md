@@ -323,3 +323,11 @@
 从配置中读取日志记录配置。此配置主要配合以下几个VI使用:
 
 - `addons\Logger\CSM - Start File Logger.vi`
+
+## 调试工具
+
+### 配置文件查看器(CSM-INI Variable Viewer - DebugTool.vi)
+
+CSM INI-Variable 是一个全局性的配置信息，此工具用于查看和调试当前内存中的配置信息。
+
+> - Ref: CSM INI-Variable Addon
