@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-11-25 21:28:49" Creator="liyao" Comments="" ID="49fab6a1eb6a690ba69451bf071fdcd3">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2026-01-03 16:59:11" Creator="liyao" Comments="" ID="875c4c72b001c443b91c2d4a7e9778d9">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
     <Library_Version>2025.11.0.1</Library_Version>
@@ -187,6 +187,15 @@
       </Exclusions>
       <Exclusions>
         <Path>README(zh-cn).md</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>.vscode</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>.markdownlint.json</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>csm-app.ini</Path>
       </Exclusions>
       <Place_Folder_Contents>
         <Path/>
