@@ -6,6 +6,10 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.SortType" Type="Int">3</Property>
 	<Item Name="_Support" Type="Folder">
+		<Item Name="_Obselete" Type="Folder">
+			<Item Name="CSM - Read Sessions.vi" Type="VI" URL="../_Support/CSM - Read Sessions.vi"/>
+			<Item Name="Read CSM Log Filter Rules.vi" Type="VI" URL="../_Support/Read CSM Log Filter Rules.vi"/>
+		</Item>
 		<Item Name="Instances" Type="Folder">
 			<Item Name="_Read CSM File Logger Configuration - v1.0.vi" Type="VI" URL="../_Support/instances/_Read CSM File Logger Configuration - v1.0.vi"/>
 			<Item Name="_Read CSM Log Filter Rules - v1.0.vi" Type="VI" URL="../_Support/instances/_Read CSM Log Filter Rules - v1.0.vi"/>
@@ -30,30 +34,31 @@
 		<Item Name="Parse Contained Variables.vi" Type="VI" URL="../_Support/Parse Contained Variables.vi"/>
 		<Item Name="Populate String with INI Variable.vi" Type="VI" URL="../_Support/Populate String with INI Variable.vi"/>
 	</Item>
-	<Item Name="As String" Type="Folder">
-		<Item Name="CSM - Read Log Filter Rules from INI Strings.vi" Type="VI" URL="../_Support/CSM - Read Log Filter Rules from INI Strings.vi"/>
-		<Item Name="CSM - Read File Logger Configuration from INI String.vi" Type="VI" URL="../_Support/CSM - Read File Logger Configuration from INI String.vi"/>
-		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
-		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
-		<Item Name="CSM - Read Sessions.vi" Type="VI" URL="../_Support/CSM - Read Sessions.vi"/>
-		<Item Name="CSM - Read Key Names.vi" Type="VI" URL="../_Support/CSM - Read Key Names.vi"/>
-		<Item Name="CSM - Read All Variable Names.vi" Type="VI" URL="../_Support/CSM - Read All Variable Names.vi"/>
-	</Item>
 	<Item Name="Utility" Type="Folder">
-		<Item Name="CSM - Read Cluster Elements From Key.vim" Type="VI" URL="../CSM - Read Cluster Elements From Key.vim"/>
-		<Item Name="CSM - Read Cluster Elements From Session.vim" Type="VI" URL="../CSM - Read Cluster Elements From Session.vim"/>
 		<Item Name="Convert API String to Cluster(Default in Key).vim" Type="VI" URL="../Convert API String to Cluster(Default in Key).vim"/>
 		<Item Name="Convert API String to Cluster(Default in Session).vim" Type="VI" URL="../Convert API String to Cluster(Default in Session).vim"/>
-		<Item Name="Read CSM Log Filter Rules.vi" Type="VI" URL="../_Support/Read CSM Log Filter Rules.vi"/>
+		<Item Name="CSM - Read Log Filter Rules from INI Strings.vi" Type="VI" URL="../_Support/CSM - Read Log Filter Rules from INI Strings.vi"/>
+		<Item Name="CSM - Read File Logger Configuration from INI String.vi" Type="VI" URL="../_Support/CSM - Read File Logger Configuration from INI String.vi"/>
 	</Item>
-	<Item Name="CSM - Configuration File Path.vi" Type="VI" URL="../CSM - Configuration File Path.vi"/>
+	<Item Name="MultipleFile" Type="Folder">
+		<Item Name="CSM - Configuration File Path.vi" Type="VI" URL="../CSM - Configuration File Path.vi"/>
+		<Item Name="CSM - Load Configuration Variables From File.vi" Type="VI" URL="../CSM - Load Configuration Variables From File.vi"/>
+		<Item Name="CSM - Mark All Temp Variables as Permanent.vi" Type="VI" URL="../CSM - Mark All Temp Variables as Permanent.vi"/>
+		<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
+		<Item Name="CSM - Unload Configuration Variable File.vi" Type="VI" URL="../CSM - Unload Configuration Variable File.vi"/>
+		<Item Name="CSM - Restore Variable Value.vi" Type="VI" URL="../CSM - Restore Variable Value.vi"/>
+		<Item Name="CSM - Reset to Default.vi" Type="VI" URL="../CSM - Reset to Default.vi"/>
+	</Item>
+	<Item Name="As String" Type="Folder">
+		<Item Name="CSM - Read All Variable Names.vi" Type="VI" URL="../_Support/CSM - Read All Variable Names.vi"/>
+		<Item Name="CSM - Read Sections.vi" Type="VI" URL="../_Support/CSM - Read Sections.vi"/>
+		<Item Name="CSM - Read Key Names.vi" Type="VI" URL="../_Support/CSM - Read Key Names.vi"/>
+		<Item Name="CSM - Read INI String.vi" Type="VI" URL="../_Support/CSM - Read INI String.vi"/>
+		<Item Name="CSM - Write INI String.vi" Type="VI" URL="../_Support/CSM - Write INI String.vi"/>
+	</Item>
 	<Item Name="CSM - Populate Configuration Variables.vi" Type="VI" URL="../CSM - Populate Configuration Variables.vi"/>
 	<Item Name="CSM - Read Configuration Variable.vim" Type="VI" URL="../CSM - Read Configuration Variable.vim"/>
-	<Item Name="CSM - Mark All Temp Variables as Permanent.vi" Type="VI" URL="../CSM - Mark All Temp Variables as Permanent.vi"/>
 	<Item Name="CSM - Write Configuration Variable.vim" Type="VI" URL="../CSM - Write Configuration Variable.vim"/>
-	<Item Name="CSM - Load Configuration Variables From File.vi" Type="VI" URL="../CSM - Load Configuration Variables From File.vi"/>
-	<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
-	<Item Name="CSM - Unload Configuration Variable File.vi" Type="VI" URL="../CSM - Unload Configuration Variable File.vi"/>
-	<Item Name="CSM - Reset to Default.vi" Type="VI" URL="../CSM - Reset to Default.vi"/>
-	<Item Name="CSM - Restore Variable Value.vi" Type="VI" URL="../CSM - Restore Variable Value.vi"/>
+	<Item Name="CSM - Read Cluster Elements From Session.vim" Type="VI" URL="../CSM - Read Cluster Elements From Session.vim"/>
+	<Item Name="CSM - Read Cluster Elements From Key.vim" Type="VI" URL="../CSM - Read Cluster Elements From Key.vim"/>
 </Library>

@@ -70,7 +70,6 @@ Provides functionality to fix CSM API parameters with a defined priority hierarc
 - When initializing, explicitly sent parameters take precedence.
 - If no parameters are sent, configuration file parameters are used.
 - In the absence of configuration file parameters, default constant parameters are applied.
-- Parameters can be partially specified, with missing values automatically filled using the next priority level.
 
 ![Example](.github/3.png)
 

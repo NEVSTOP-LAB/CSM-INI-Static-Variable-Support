@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2025-09-14 11:33:23" Creator="liyao" Comments="" ID="a3f7221ceaf5db39b3b4033e53bbfa85">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2026-01-26 13:03:00" Creator="liyao" Comments="" ID="da79750720ceb01a302914ce7bab0807">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
-    <Library_Version>2025.9.0.1</Library_Version>
+    <Library_Version>2025.11.0.1</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>vip</Library_Output_Folder>
@@ -40,7 +40,9 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[fix] #87 improve performance of "Sync to File.vi".</Release_Notes>
+      <Release_Notes>[update] update INIViewer Tool
+[fix] #87 improve performance of "Sync to File.vi".
+[fix] #92 fix path issue of built exe</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -113,6 +115,12 @@
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
         <Path>&lt;user.lib&gt;\_NEVSTOP\Communicable State Machine(CSM)\_tool</Path>
       </Additional_Destination>
+      <Additional_Destination>
+        <Name>LabVIEW</Name>
+        <LLB>false</LLB>
+        <Preserve_Hierarchy>true</Preserve_Hierarchy>
+        <Path>&lt;application&gt;</Path>
+      </Additional_Destination>
     </Destinations>
     <Source_Files>
       <Destination_Overrides>
@@ -138,6 +146,12 @@
         <Destination>0</Destination>
         <Additional_Destination>true</Additional_Destination>
         <Additional_Destination_Index>1</Additional_Destination_Index>
+      </Destination_Overrides>
+      <Destination_Overrides>
+        <Path>help</Path>
+        <Destination>0</Destination>
+        <Additional_Destination>true</Additional_Destination>
+        <Additional_Destination_Index>2</Additional_Destination_Index>
       </Destination_Overrides>
       <Password_Overrides>
         <Path>.</Path>
@@ -175,6 +189,15 @@
       </Exclusions>
       <Exclusions>
         <Path>README(zh-cn).md</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>.vscode</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>.markdownlint.json</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>csm-app.ini</Path>
       </Exclusions>
       <Place_Folder_Contents>
         <Path/>
