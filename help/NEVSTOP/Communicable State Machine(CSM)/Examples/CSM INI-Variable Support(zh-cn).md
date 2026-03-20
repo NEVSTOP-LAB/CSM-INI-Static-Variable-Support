@@ -221,4 +221,18 @@ CSM INI Variable Support提供了修改配置信息的API。您可以使用这�
 - 可以调用`CSM - Mark All Temp Variables as Permanent.vi`将所有临时变量标记为永久变量，这样在同步保存到配置文件时，所有变量都会被保留下来。
 
 
+## 从字符串加载配置变量(8. import Configuration From String.vi)
+
+### Overview
+
+本范例用于展示如何从字符串加载配置变量，而不需要创建配置文件。
+
+这样效果与使用 API 逐条写入配置变量相同。可以简化代码。所有的配置信息都将缓存在临时变量空间中。
+
+### Introduction
+
+CSM INI Variable Support API提供了从字符串加载配置变量的API。您可以使用`CSM - Load Configuration Variables From String.vi`来从字符串加载配置变量。这样效果与使用 API 逐条写入配置变量相同。可以简化代码。所有的配置信息都将缓存在临时变量空间中。
+
+
+
 

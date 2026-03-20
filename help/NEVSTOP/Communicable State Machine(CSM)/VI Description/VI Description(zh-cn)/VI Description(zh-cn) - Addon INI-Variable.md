@@ -272,6 +272,20 @@
 - <b>Configuration Path</b>: 配置文件路径。
 - <b>Section Postfix ("")</b>: 节名后缀。
 
+
+### CSM - Load Configuration Variables From String.vi
+从指定字符串加载配置变量。如果节名后缀不为空，载入的节名称会加上该后缀。
+
+<b>Section Postfix ("")</b>主要用于载入多个配置文件但具有相同节的情况。例如: 两个配置文件`Hardware1.ini`和`Hardware2.ini`，都有一个名为`Serial`的节且内部的Keys相同(表示串口配置)，那么后载入的文件中的配置会覆盖先载入的文件中的配置。使用<b>Section Postfix ("")</b>可以避免节名冲突。
+
+<b>参考范例</b>: `8. import Configuration From String.vi`。
+
+> - Ref: CSM INI-Variable配置文件路径
+
+-- <b>输入控件(Controls)</b> --
+- <b>Configuration String</b>: 配置字符串。
+- <b>Section Postfix ("")</b>: 节名后缀。
+
 ### CSM - Unload Configuration Variable File.vi
 卸载配置变量文件。
 
