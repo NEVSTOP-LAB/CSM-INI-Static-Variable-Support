@@ -273,6 +273,19 @@ Loads configuration variables from a specified file. If the section name postfix
 - <b>Configuration Path</b>: Configuration file path.
 - <b>Section Postfix ("")</b>: Section name postfix.
 
+### CSM - Load Configuration Variables From String.vi
+Loads configuration variables from a specified string. If the section name postfix is not empty, the loaded section names will have this postfix appended.
+
+<b>Section Postfix ("")</b> is primarily used when loading multiple configuration files that have identical sections. For example, two configuration files `Hardware1.ini` and `Hardware2.ini` both have a section named `Serial` with identical internal keys indicating serial port configuration. In this case, the configuration in the file loaded later would overwrite the configuration in the file loaded earlier. Using <b>Section Postfix ("")</b> prevents section name conflicts.
+
+<b>Reference Example</b>: `8. import Configuration From String.vi`.
+
+> - Ref: CSM INI-Variable Configuration File Path
+
+-- <b>Controls</b> --
+- <b>Configuration String</b>: Configuration string.
+- <b>Section Postfix ("")</b>: Section name postfix.
+
 ### CSM - Unload Configuration Variable File.vi
 Unloads a configuration variable file.
 
