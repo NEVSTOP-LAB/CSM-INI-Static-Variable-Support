@@ -42,7 +42,7 @@
 	</Item>
 	<Item Name="MultipleFile" Type="Folder">
 		<Item Name="CSM - Configuration File Path.vi" Type="VI" URL="../CSM - Configuration File Path.vi"/>
-		<Item Name="CSM - Load Configuration Variables From File.vi" Type="VI" URL="../CSM - Load Configuration Variables From File.vi"/>
+		<Item Name="CSM - Load Configuration Variables From String.vi" Type="VI" URL="../CSM - Load Configuration Variables From String.vi"/>
 		<Item Name="CSM - Mark All Temp Variables as Permanent.vi" Type="VI" URL="../CSM - Mark All Temp Variables as Permanent.vi"/>
 		<Item Name="CSM - Sync Configuration Variables to File.vi" Type="VI" URL="../CSM - Sync Configuration Variables to File.vi"/>
 		<Item Name="CSM - Unload Configuration Variable File.vi" Type="VI" URL="../CSM - Unload Configuration Variable File.vi"/>
@@ -50,6 +50,7 @@
 		<Item Name="CSM - Reset to Default.vi" Type="VI" URL="../CSM - Reset to Default.vi"/>
 	</Item>
 	<Item Name="As String" Type="Folder">
+		<Item Name="CSM - Load Configuration Variables From File.vi" Type="VI" URL="../CSM - Load Configuration Variables From File.vi"/>
 		<Item Name="CSM - Read All Variable Names.vi" Type="VI" URL="../_Support/CSM - Read All Variable Names.vi"/>
 		<Item Name="CSM - Read Sections.vi" Type="VI" URL="../_Support/CSM - Read Sections.vi"/>
 		<Item Name="CSM - Read Key Names.vi" Type="VI" URL="../_Support/CSM - Read Key Names.vi"/>

@@ -29,7 +29,7 @@ Variable Syntax: `${section.variable:defaultValue}`
   - Step2.3: In the code for this part, note that CSM INI Variable Support is not limited to parameters. It can be used with any field.
   - Step2.4: Expected result for the code execution in Step2.3.
 
-  
+
 
 ## Loading Configuration by Providing a Cluster Prototype (2. Load the corresponding configuration by providing the prototype.vi)
 
@@ -98,7 +98,7 @@ Data sources may include: information sent via message parameters, parameters in
   - Step5.1: `Convert API String to Cluster(Default in Session).vim` conversion. The "non-existing module" section does not exist, so the provided reference data is used, resulting in IP:127.0.0.1 and port:80.
   - Step5.2: `Convert API String to Cluster(Default in Session).vim` conversion. Load configuration from the given section/key, but neither exists. The provided reference data is used, resulting in IP:127.0.0.1 and port:80.
 
-  
+
 
 ## Multi-file Configuration System (4. Multi-file configuration system.vi)
 
@@ -202,7 +202,7 @@ path = ${root}/${info.operator}/${info.date}/${info.test}${info.time}.tdms
 
 Using the configuration file example above:
 
-**Scenario 1:** Reading `${file.path}` returns an actual file path dynamically composed of other configuration items, enabling flexible path definitions. 
+**Scenario 1:** Reading `${file.path}` returns an actual file path dynamically composed of other configuration items, enabling flexible path definitions.
 
 **Scenario 2:** The `[case1]` and `[case2]` sections define two different sets of related configuration information. By modifying `${RT.select}`, you can switch the result of accessing `${RT.addr}`.
 
@@ -240,3 +240,15 @@ You can use `CSM - Write Configuration Variable.vi` and `CSM - Write INI String.
 - By default, configurations modified in memory are not automatically synchronized to the configuration file. You need to call `CSM - Sync Configuration Variables to File.vi` to synchronize them to the file.
 - Modified variables will only be preserved when synchronized to the file if the original configuration file defined those specific configuration items. If the original configuration file did not define certain items, the modified variables are saved only in memory by default and are not synchronized to the file.
 - You can call `CSM - Mark All Temp Variables as Permanent.vi` to mark all temporary variables as permanent, ensuring that all variables are preserved when synchronized to the configuration file.
+
+## Loading Configuration Variables From String (8. import Configuration From String.vi)
+
+### Overview
+
+This example demonstrates how to load configuration variables directly from a string without creating a configuration file.
+
+The effect is equivalent to writing configuration variables one by one through APIs. This can simplify the code. All configuration information will be cached in temporary variable space.
+
+### Introduction
+
+CSM INI Variable Support API provides an API for loading configuration variables from a string. You can use `CSM - Load Configuration Variables From String.vi` to load configuration variables from a string. The effect is equivalent to writing configuration variables one by one through APIs. This can simplify the code. All configuration information will be cached in temporary variable space.

@@ -15,7 +15,7 @@ on:
       - '**.svg'
       - '**.json'
       - '**.yml'
-  
+
   # Also add paths-ignore for pull requests
   pull_request:
     branches:
@@ -42,6 +42,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+
+      - uses: NEVSTOP-LAB/InstallNevstopPackage@main
+        with:
+          LabVIEW_Version: 2017
+          NEVSTOP-FTP-IP: ${{ secrets.VIPM_FTP_IP }}
+          NEVSTOP-FTP-PORT: ${{ secrets.VIPM_FTP_PORT }}
+          PackageName: Communicable-State-Machine
+          PackageName2: CSM-API-String-Arguments-Support
 
       - name: Run lvCICD Test cases with VITester
         id: StartVITester
