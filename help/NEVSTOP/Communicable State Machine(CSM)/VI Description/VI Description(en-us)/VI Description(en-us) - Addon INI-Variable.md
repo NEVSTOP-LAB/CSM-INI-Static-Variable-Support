@@ -165,6 +165,20 @@ Converts an API String to a cluster. The data is stored in the specified section
 - <b>Data</b>: Converted data.
 - <b>error</b>: Error information.
 
+### Convert API String to Cluster with Log(Default in Session).vim
+Converts an API String to a cluster in the same way as `Convert API String to Cluster(Default in Session).vim`, and additionally broadcasts the resolved data as an API String to the CSM User Global Log through `CSM - Broadcast Data As API String.vim`. The value resolved for every element is therefore visible in the log, which helps to trace where a parameter value comes from.
+
+<b>Application Scenario</b>: Debugging parameter resolution of the configuration file.
+
+-- <b>Controls</b> --
+- <b>API String</b>: Input API String.
+- <b>Section Name ("" as Default)</b>: Section name. An empty string indicates the default section.
+- <b>Type</b>: Data type.
+
+-- <b>Indicators</b> --
+- <b>Data</b>: Converted data.
+- <b>error</b>: Error information.
+
 ### Convert API String to Cluster(Default in Key).vim
 Converts an API String to a cluster. The data is stored in a specified key within a specified section. This VI follows a defined priority hierarchy: CSM API Parameters > Configuration File Parameters > Default Constant Parameters. This makes it simple to fix serial port initialization parameters in a configuration file.
 
@@ -175,6 +189,21 @@ Converts an API String to a cluster. The data is stored in a specified key withi
 <b>Application Scenario</b>: Used to save CSM parameters into a configuration file.
 
 <b>Reference Example</b>: `3. In CSM API parameters.vi`.
+
+-- <b>Controls</b> --
+- <b>API String</b>: Input API String.
+- <b>Section Name ("" as Default)</b>: Section name. An empty string indicates the default section.
+- <b>Type</b>: Data type.
+- <b>Variable Name</b>: Variable name.
+
+-- <b>Indicators</b> --
+- <b>Data</b>: Converted data.
+- <b>error</b>: Error information.
+
+### Convert API String to Cluster with Log(Default in Key).vim
+Converts an API String to a cluster in the same way as `Convert API String to Cluster(Default in Key).vim`, and additionally broadcasts the resolved data as an API String to the CSM User Global Log through `CSM - Broadcast Data As API String.vim`. The value resolved for every element is therefore visible in the log, which helps to trace where a parameter value comes from.
+
+<b>Application Scenario</b>: Debugging parameter resolution of the configuration file.
 
 -- <b>Controls</b> --
 - <b>API String</b>: Input API String.

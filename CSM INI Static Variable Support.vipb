@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2026-08-18 13:21:08" Creator="liyao" Comments="" ID="a8f6c871d9b96cba8b477501b6b78d6b">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2023-11-06 11:10:53" Modified_Date="2026-10-07 20:42:03" Creator="liyao" Comments="" ID="1e06f94d697265ae1074b1b5e8d72a2d">
   <Library_General_Settings>
     <Package_File_Name>NEVSTOP_lib_CSM_INI_Static_Variable_Support</Package_File_Name>
-    <Library_Version>2026.7.0.1</Library_Version>
+    <Library_Version>2026.7.1.1</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>vip</Library_Output_Folder>
@@ -14,6 +14,8 @@
     <Product_Name>CSM INI Static Variable Support</Product_Name>
     <Was_Built>true</Was_Built>
     <Target>LabVIEW</Target>
+    <Package_LabVIEW_Save_Version>false</Package_LabVIEW_Save_Version>
+    <LabVIEW_Save_Version/>
   </Library_General_Settings>
   <Advanced_Settings>
     <Package_Dependencies>
@@ -40,8 +42,8 @@
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/CSM-INI-Static-Variable-Support</URL>
-      <Release_Notes>[add] Add Convert API String to Cluster with Log Utility VIs, which is useful for debugging.
-[fix] #101 backslash or slash both could be used as seperator for path in __include section.</Release_Notes>
+      <Release_Notes>[fix] #100 #101 Support Linux-style paths: both backslash and slash are accepted as path separators in the [__include] section
+[add] Add "Convert API String to Cluster with Log(Default in Key).vim" and "Convert API String to Cluster with Log(Default in Session).vim". They behave like the existing Convert API String to Cluster VIs, and additionally broadcast the resolved data as an API String to the CSM global log, making the origin of each value easy to trace</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
