@@ -165,6 +165,20 @@
 - <b>Data</b>: 转换后的数据。
 - <b>error</b>: 错误信息。
 
+### Convert API String to Cluster with Log(Default in Session).vim
+转换方式与`Convert API String to Cluster(Default in Session).vim`相同，此外还会把解析结果以API String格式，通过`CSM - Broadcast Data As API String.vim`广播到CSM全局日志(User Global Log)。因此每个元素最终解析出的值都会出现在日志中，便于定位参数值的来源。
+
+<b>应用场景</b>: 调试配置文件的参数解析过程。
+
+-- <b>输入控件(Controls)</b> --
+- <b>API String</b>: API String字符串。
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
+- <b>Type</b>: 数据类型。
+
+-- <b>输出控件(Indicators)</b> --
+- <b>Data</b>: 转换后的数据。
+- <b>error</b>: 错误信息。
+
 ### Convert API String to Cluster(Default in Key).vim
 将API String字符串转换为簇，数据保存在指定的节(section)中的指定键(key)。具有明确的优先级层次: CSM API参数>配置文件参数>默认常量参数。例如，这使得将串口初始化参数固定在配置文件中变得非常简单。
 - 初始化时，显式发送的参数具有最高优先级。
@@ -174,6 +188,21 @@
 <b>应用场景</b>: 用于将CSM的参数固化到配置文件中。
 
 <b>参考范例</b>: `3. In CSM API parameters.vi`。
+
+-- <b>输入控件(Controls)</b> --
+- <b>API String</b>: API String字符串。
+- <b>Section Name ("" as Default)</b>: 节名，空字符串表示使用默认节。
+- <b>Type</b>: 数据类型。
+- <b>Variable Name</b>: 变量名称。
+
+-- <b>输出控件(Indicators)</b> --
+- <b>Data</b>: 转换后的数据。
+- <b>error</b>: 错误信息。
+
+### Convert API String to Cluster with Log(Default in Key).vim
+转换方式与`Convert API String to Cluster(Default in Key).vim`相同，此外还会把解析结果以API String格式，通过`CSM - Broadcast Data As API String.vim`广播到CSM全局日志(User Global Log)。因此每个元素最终解析出的值都会出现在日志中，便于定位参数值的来源。
+
+<b>应用场景</b>: 调试配置文件的参数解析过程。
 
 -- <b>输入控件(Controls)</b> --
 - <b>API String</b>: API String字符串。
@@ -271,7 +300,6 @@
 -- <b>输入控件(Controls)</b> --
 - <b>Configuration Path</b>: 配置文件路径。
 - <b>Section Postfix ("")</b>: 节名后缀。
-
 
 ### CSM - Load Configuration Variables From String.vi
 从指定字符串加载配置变量。如果节名后缀不为空，载入的节名称会加上该后缀。

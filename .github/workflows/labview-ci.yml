@@ -1,6 +1,21 @@
-# This is a basic workflow to help you get started with Actions
+# Merged LabVIEW CI workflow
+# Combines the previous three workflows into one pipeline with the order:
+#   Check_Broken_VIs -> Build_VIPM_Library -> Run_Testcases
+#
+# Trigger paths-ignore note:
+#   Original workflows had slightly different ignore lists
+#   (Build_VIPM_Library ignored 'testcases/**' but not '**.vipb';
+#    Check_Broken_VIs / Run Testcases ignored '**.vipb' but not 'testcases/**').
+#   To keep this merged workflow triggering whenever ANY original workflow
+#   would have triggered, only the intersection of the ignore lists is used.
 
-name: Build_VIPM_Library
+name: LabVIEW CI
+
+# 同一分支/标签的多次触发只保留最新一次运行：新 push 自动取消进行中的上一次运行，
+# 避免多次提交在自托管 runner 上重复构建、排队积压（与 usermanual-ci.yml 同款配置）
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 # Controls when the workflow will run
 on:
@@ -17,7 +32,6 @@ on:
       - '**.svg'
       - '**.json'
       - '**.yml'
-      - 'testcases/**'
 
   push:
     paths-ignore:
@@ -28,21 +42,18 @@ on:
       - '**.svg'
       - '**.json'
       - '**.yml'
-      - 'testcases/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  Build_VIPM_Library:
+  # Single job: all steps run sequentially on the SAME (self-hosted) machine.
+  labview_ci:
     # The type of runner that the job will run on
     runs-on: [self-hosted, lv2017]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
       # Get env variables
       # https://github.com/marketplace/actions/github-environment-variables-action
       - uses: FranzDiebold/github-env-vars-action@v2
@@ -58,7 +69,18 @@ jobs:
           PackageName: Communicable-State-Machine
           PackageName2: CSM-API-String-Arguments-Support
 
-      # Runs a set of commands using the runners shell
+      # --- Step 1: Check for broken VIs ---
+      - id: Check_Broken_VIs
+        uses: LV-APT/lvCICD@main
+        with:
+          LabVIEW_Version: 2017
+          Operation: VIAn_CheckBrokenVIs
+          Parameter1: ${{ github.workspace }}
+          Parameter2: NOPASSWORD
+          Parameter3: YES
+          Parameter4: -placeContent
+
+      # --- Step 2: Build the VIPM library ---
       - name: BuildDailyVIP
         id: build-vip
         uses: NEVSTOP-LAB/vipm-BuildViPackage@main
@@ -89,3 +111,11 @@ jobs:
           server_dir: /${{ env.CI_REPOSITORY_OWNER_SLUG }}/${{ env.CI_REPOSITORY_NAME }}/${{ env.CI_ACTION_REF_NAME }}/
           local_dir: ./vip/
 
+      # --- Step 3: Run test cases ---
+      - name: Run lvCICD Test cases with VITester
+        id: StartVITester
+        uses: NEVSTOP-LAB/lvCICD@main
+        with:
+          LabVIEW_Version: 2017
+          Operation: StartVITester
+          Parameter1: ${{ github.workspace }}\CSM INI Static Variable Support.lvproj

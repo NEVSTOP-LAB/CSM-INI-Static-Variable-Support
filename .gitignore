@@ -7,3 +7,4 @@
 /csm-app.ini
 *.lvcsm
 .$*
+.tmp/

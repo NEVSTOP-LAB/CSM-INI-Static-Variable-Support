@@ -37,6 +37,8 @@
 	<Item Name="Utility" Type="Folder">
 		<Item Name="Convert API String to Cluster(Default in Key).vim" Type="VI" URL="../Convert API String to Cluster(Default in Key).vim"/>
 		<Item Name="Convert API String to Cluster(Default in Session).vim" Type="VI" URL="../Convert API String to Cluster(Default in Session).vim"/>
+		<Item Name="Convert API String to Cluster with Log(Default in Key).vim" Type="VI" URL="../Convert API String to Cluster with Log(Default in Key).vim"/>
+		<Item Name="Convert API String to Cluster with Log(Default in Session).vim" Type="VI" URL="../Convert API String to Cluster with Log(Default in Session).vim"/>
 		<Item Name="CSM - Read Log Filter Rules from INI Strings.vi" Type="VI" URL="../_Support/CSM - Read Log Filter Rules from INI Strings.vi"/>
 		<Item Name="CSM - Read File Logger Configuration from INI String.vi" Type="VI" URL="../_Support/CSM - Read File Logger Configuration from INI String.vi"/>
 	</Item>
