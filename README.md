@@ -44,6 +44,41 @@ Key features include:
 > [!WARNING]
 > This library uses a global cache modification flag. Frequent configuration changes reduce the effectiveness of the read caching mechanism. It is not recommended for scenarios that require frequent configuration updates.
 
+## Comments in Configuration Files
+
+Configuration files accept whole-line and trailing comments.
+
+```ini
+; whole-line comment
+# whole-line comment
+
+[network]
+ip = 192.168.0.1        ; trailing comment
+port = 8080             # trailing comment
+```
+
+> [!NOTE]
+> **Whole-line comments**
+>
+> - A line whose first non-whitespace character is `;` or `#` is a comment: it is skipped when reading and is not returned by `CSM - Read Sections.vi` or `CSM - Read Key Names.vi`.
+> - A line that is neither a `[section]` header, a `key = value` pair, nor a continuation line is also treated as a comment, so a `//` line without `=` behaves the same way.
+> - A line that starts with whitespace followed by any character other than `#`, `;`, or `=` continues the value of the previous key. Indent a line only when the value is intentionally multi-line.
+> - Comment lines stay in the memory cache and are written back by `CSM - Sync Configuration Variables to File.vi`. Blank lines are dropped on load and are not restored.
+
+> [!WARNING]
+> **A trailing comment is stripped only for numeric and Boolean reads**
+>
+> - `port = 8080 ; note` returns `8080` when read as I32, U32, DBL, or Boolean.
+> - The same line read as a string returns `8080 ; note`, because string reads keep the text that follows the value.
+> - Writing a key replaces everything after `=` on that line, including an existing trailing comment.
+
+> [!NOTE]
+> **Value quoting**
+>
+> - Leading and trailing whitespace is removed from the value.
+> - When the value starts and ends with the same quote character (`"` or `'`), the outer quotes are removed: `ip = "192.168.0.1"` reads back as `192.168.0.1`.
+> - In the nested-variable example below, `date = #fill by user` is a string value that acts as placeholder text, not a comment.
+
 ## Application Scenarios
 
 ### CSM-Resolvable Parameters
