@@ -43,6 +43,16 @@
 >   - To avoid circular references, the same configuration file will be automatically ignored if loaded a second time.
 
 > [!NOTE]
+> <b>CSM INI-Variable Configuration File Comments</b>
+>
+> - <b>Whole-line comment</b>: a line whose first non-whitespace character is `;` or `#` is ignored and is not returned as a section or key name.
+> - A line that is neither a `[section]` header, a `key = value` pair, nor a continuation line is also treated as a comment, for example a `//` line without `=`.
+> - A line that starts with whitespace followed by any character other than `#`, `;`, or `=` continues the value of the previous key; it is not a comment.
+> - Comment lines stay in the memory cache and are written back by `CSM - Sync Configuration Variables to File.vi`; blank lines are dropped on load and are not restored.
+> - <b>Trailing comment</b>: `port = 8080 ; note` is ignored only when the key is read as a number or Boolean. A string read keeps `; note` as part of the value.
+> - Writing a key replaces everything after `=` on that line, including an existing trailing comment.
+
+> [!NOTE]
 > <b>CSM INI-Variable Multi-File Configuration Scenario</b>
 >
 > - When loading multiple files, configuration items in files loaded later will overwrite identical items in previously loaded files.
@@ -296,6 +306,7 @@ Loads configuration variables from a specified file. If the section name postfix
 
 <b>Reference Example</b>: `5. import Config.ini with __include section.vi`.
 
+> - Ref: CSM INI-Variable Configuration File Comments
 > - Ref: CSM INI-Variable Configuration File Path
 
 -- <b>Controls</b> --
